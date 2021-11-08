@@ -44,7 +44,7 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --dry-run --no-ci --debug --branches main
+        run: npx semantic-release --debug --branches main
 
 
       - name: Deploy
