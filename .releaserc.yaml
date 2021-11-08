@@ -60,8 +60,10 @@ generateNotes:
     presetConfig: true
 prepare:
   - path: "@semantic-release/git"
+    message: 'RELEASE: ${nextRelease.version}'
+    assets: ['CHANGELOG.md', 'version']
   - path: "@semantic-release/changelog"
-    changelogFile: "docs/CHANGELOG.md"
+    changelogFile: "CHANGELOG.md"
 publish:
   - path: "@semantic-release/github"
 
