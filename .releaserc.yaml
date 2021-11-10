@@ -66,11 +66,6 @@ prepare:
     changelogFile: "CHANGELOG.md"
 publish:
   - path: "@semantic-release/github"
-  - path: "@semantic-release/git"
-    message: 'RELEASE: ${nextRelease.version}'
-    assets: ['CHANGELOG.md', 'version','package.json']
-  - path: "@semantic-release/changelog"
-    changelogFile: "CHANGELOG.md"
 
 success:
   - "@semantic-release/github"
