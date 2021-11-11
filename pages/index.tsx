@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const IndexPage = ({ homePageData: HomePageData }) => {
   return (
-    <Layout title="Bora Oren Showcase">
+    <Layout title={homePageData.pageTitle["en-US"]}>
       <span style={{ fontWeight: "bold" }}>&nbsp; V{packageJson.version}</span>
       <div className="flex justify-between bg-primary-900 mt-5">
         <span

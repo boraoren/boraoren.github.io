@@ -1,6 +1,9 @@
 import { HomePageData } from "../../../interfaces/HomePageData";
 
 export const homePageData: HomePageData =  {
+    pageTitle: {
+        "en-US": "Bora Oren Showcase",
+    },
     hi: {
         "en-US": "Hi,",
         "tr-TR": "Merhaba,",
