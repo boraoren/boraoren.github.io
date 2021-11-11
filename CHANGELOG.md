@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/boraoren/showcase/compare/v1.4.1...v1.5.0) (2021-11-11)
+
+
+### Features
+
+* **header:** move right image to top [#10](https://github.com/boraoren/showcase/issues/10) ([88113e1](https://github.com/boraoren/showcase/commit/88113e18f4a2b743abb27ac102a902ee23984506))
+
 ## [1.4.1](https://github.com/boraoren/showcase/compare/v1.4.0...v1.4.1) (2021-11-11)
 
 
