@@ -17,8 +17,8 @@ class MyDocument extends Document {
 
   createFontFamilyLinks = () => {
     const fontFamilyLinks = [];
-    for (const [key, value] of Object.entries(myTheme.fontFamilyUrls)) {
-      fontFamilyLinks.push(<link key={key} href={value} rel="stylesheet" />);
+    for (const [key, font] of Object.entries(myTheme.fontFamily)) {
+      fontFamilyLinks.push(<link key={key} href={font.url} rel="stylesheet" />);
     }
     return fontFamilyLinks;
   };
