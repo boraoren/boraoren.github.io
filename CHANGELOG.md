@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/boraoren/showcase/compare/v1.4.0...v1.4.1) (2021-11-11)
+
+
+### Bug Fixes
+
+* **semantic release:** npm plugin ([39e797e](https://github.com/boraoren/showcase/commit/39e797eb230a398db97860d6a975b03e0fa3a4f8))
+
 # [1.4.0](https://github.com/boraoren/showcase/compare/v1.3.1...v1.4.0) (2021-11-11)
 
 
