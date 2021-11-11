@@ -1,3 +1,11 @@
+# [1.6.0](https://github.com/boraoren/showcase/compare/v1.5.0...v1.6.0) (2021-11-11)
+
+
+### Features
+
+* **pageTitle:** change / pages / index / layout title to dynamic [#11](https://github.com/boraoren/showcase/issues/11) ([2683ff2](https://github.com/boraoren/showcase/commit/2683ff2183becd303a39e43bf3c5f2f583be4537))
+* **pageTitle:** change / pages / index / layout title to dynamic [#11](https://github.com/boraoren/showcase/issues/11) ([06c1ca9](https://github.com/boraoren/showcase/commit/06c1ca9fc3ddf2f3c6a11ae0b8002d7fa279c353))
+
 # [1.5.0](https://github.com/boraoren/showcase/compare/v1.4.1...v1.5.0) (2021-11-11)
 
 
