@@ -1,8 +1,10 @@
 import { extendTheme } from '@chakra-ui/react'
 import '@fontsource/roboto/900.css'
+import '@fontsource/caveat/400.css'
 
 const theme = extendTheme({
   fonts: {
+    caveat: "Caveat",
     body: "system-ui, sans-serif",
     heading: "Georgia, serif",
     mono: "Menlo, monospace",

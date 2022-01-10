@@ -12,6 +12,9 @@ import {
   Image,
   Text,
   useColorMode,
+  createIcon,
+  useColorModeValue,
+  Icon,
 } from "@chakra-ui/react";
 
 const IndexPage = ({ homePageData: HomePageData }) => {
@@ -20,12 +23,17 @@ const IndexPage = ({ homePageData: HomePageData }) => {
   return (
     <Layout title={homePageData.pageTitle["en-US"]}>
       <Flex m={2} justifyContent={"space-between"}>
-        <Button onClick={toggleColorMode}>
-          Toggle {colorMode === "light" ? "Dark" : "Light"}
-        </Button>
-        <Tag variant="subtle">
-          V{packageJson.version}
-        </Tag>
+        <Box>
+          <Text
+            fontSize={"lg"}
+            fontFamily={"caveat"}
+            right={"0px"}
+            top={"-10px"}
+            transform={"rotate(-10deg)"}
+          >
+            V{packageJson.version}
+          </Text>
+        </Box>
       </Flex>
       <Box bg="primary.900" m={1}>
         <Flex align={"center"}>
@@ -55,6 +63,9 @@ const IndexPage = ({ homePageData: HomePageData }) => {
             mt={-50}
           />
         </Flex>
+        {/** <Button onClick={toggleColorMode}>
+          Toggle {colorMode === "light" ? "Dark" : "Light"}
+  </Button> **/}
       </Box>
     </Layout>
   );
