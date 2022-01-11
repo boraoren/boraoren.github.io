@@ -1,5 +1,6 @@
 import { extendTheme } from '@chakra-ui/react'
 import '@fontsource/roboto/900.css'
+import '@fontsource/roboto/400.css'
 import '@fontsource/caveat/400.css'
 
 const theme = extendTheme({
@@ -9,7 +10,8 @@ const theme = extendTheme({
     heading: "Georgia, serif",
     mono: "Menlo, monospace",
     title: "Roboto",
-    subtitle: "Handlee"
+    subtitle: "Handlee",
+    "journal.summary": "Roboto" 
   },
   fontSizes: {
     xs: "0.75rem",

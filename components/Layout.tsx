@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import { Container } from '@chakra-ui/react'
 
 type Props = {
   children?: ReactNode
@@ -8,7 +9,7 @@ type Props = {
 }
 
 const Layout = ({ children, title = 'This is the default title' }: Props) => (
-  <div>
+  <Container maxWidth={1000}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -19,11 +20,14 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       </nav>
     </header>
     {children}
+    <br/>
     <footer>
       <hr />
       <span></span>
+      <br/>
+      FOOTER
     </footer>
-  </div>
+  </Container>
 )
 
 export default Layout
