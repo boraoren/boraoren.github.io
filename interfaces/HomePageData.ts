@@ -1,4 +1,4 @@
-export type HomePageData = {
+export default interface HomePageData{
     pageTitle: object;
     hi: object;
     Im: object;
