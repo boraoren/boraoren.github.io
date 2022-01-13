@@ -6,12 +6,9 @@ import '@fontsource/caveat/400.css'
 const theme = extendTheme({
   fonts: {
     caveat: "Caveat",
-    body: "system-ui, sans-serif",
-    heading: "Georgia, serif",
-    mono: "Menlo, monospace",
     title: "Roboto",
     subtitle: "Handlee",
-    "journal.summary": "Roboto" 
+    "journal.summary": "Roboto"
   },
   fontSizes: {
     xs: "0.75rem",
@@ -51,6 +48,28 @@ const theme = extendTheme({
     lg: "960px",
     xl: "1200px",
     "2xl": "1536px",
+  },
+  styles: {
+    global: {
+      '.mdx-prose': {
+        h1: {
+          fontSize: '4xl',
+          mb: '4',
+        },
+        h2: {
+          fontSize: '3xl',
+          mb: '4',
+        },
+        h3: {
+          fontSize: '2xl',
+          mb: '4',
+        },
+        p: {
+          fontSize: 'sm',
+          lineHeight: '1.4',
+        },
+      },
+    },
   }
 });
 
