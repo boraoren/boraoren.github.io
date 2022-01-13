@@ -1,4 +1,4 @@
-import { HomePageData } from "../../../interfaces/HomePageData";
+import HomePageData from "../../../interfaces/HomePageData";
 
 export const homePageData: HomePageData =  {
     pageTitle: {

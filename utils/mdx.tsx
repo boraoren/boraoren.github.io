@@ -2,6 +2,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { bundleMDX } from "mdx-bundler";
+import JournalModel from "../interfaces/JournalModel";
+import { DateTime } from 'luxon'
 
 export const ROOT = process.cwd();
 export const POSTS_PATH = path.join(process.cwd(), "content/journals");
@@ -77,7 +79,7 @@ export const getSingleJournal = async (slug: string) => {
   };
 };
 export const getAllJournal = () => {
-  return fs
+  const journals: JournalModel[] =  fs
       .readdirSync(POSTS_PATH)
       .filter((path) => /\.mdx?$/.test(path))
       .map((fileName) => {
@@ -88,6 +90,17 @@ export const getAllJournal = () => {
         return {
           frontmatter: data,
           slug: slug,
-        };
+        } as JournalModel;
       });
+
+  return sortJournals(journals);
 };
+
+
+const sortJournals = (journals: JournalModel[]) => {
+  return journals.sort((a, b) => {
+    const beforeDate = DateTime.fromFormat(a.frontmatter.date, 'dd/MM/yyyy')
+    const afterDate = DateTime.fromFormat(b.frontmatter.date, 'dd/MM/yyyy')
+    return afterDate - beforeDate
+  })
+}

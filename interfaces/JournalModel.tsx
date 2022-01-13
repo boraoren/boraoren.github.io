@@ -3,7 +3,8 @@ interface Frontmatter {
   title: string;
   summary: string;
   description: string;
-  day: number;
+  date: string;
+  readMore: string;
 }
 
 export default interface JournalModel {

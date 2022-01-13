@@ -7,10 +7,10 @@ import rehypeParse from "rehype-parse";
 import rehypeReact from "rehype-react";
 
 interface JournalSummaryProps {
-  date: number;
+  day: number;
 }
 
-const JournalSummary: React.FC<JournalSummaryProps> = ({ date, children }) => {
+const JournalSummary: React.FC<JournalSummaryProps> = ({ day, children }) => {
 
     function useProcessor(text) {
         // @ts-ignore
@@ -34,7 +34,7 @@ const JournalSummary: React.FC<JournalSummaryProps> = ({ date, children }) => {
     return (
     <Container maxWidth={"150ch"} mt={7} ml={-3}>
       <Flex>
-        <JournalDate value={date} />
+        <JournalDate value={day} />
         <JournalText>{children}</JournalText>
       </Flex>
     </Container>
