@@ -1,15 +1,22 @@
 import React from "react";
 import {getMDXComponent} from "mdx-bundler/client";
 import {getAllJournal, getSingleJournal} from "../../utils/mdx";
+import Layout from "../../components/Layout";
+import {Frontmatter} from "../../interfaces/JournalModel";
 
-const Journal = ({code, frontmatter}) => {
+interface JournalProps{
+    code: any;
+    frontmatter: Frontmatter;
+}
+
+const Journal: React.FC<JournalProps> = ({code, frontmatter}) => {
     const Component = React.useMemo(() => getMDXComponent(code), [code]);
     const MDXWrapper = (props) => <div className='mdx-prose' {...props} ><Component/></div>
 
     return (
-        <div>
+        <Layout title={frontmatter.title}>
             <MDXWrapper/>
-        </div>
+        </Layout>
     );
 };
 

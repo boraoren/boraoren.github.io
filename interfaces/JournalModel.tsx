@@ -1,4 +1,4 @@
-interface Frontmatter {
+export interface Frontmatter {
   slug: string;
   title: string;
   summary: string;
