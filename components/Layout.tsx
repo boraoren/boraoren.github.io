@@ -25,7 +25,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <hr />
       <span></span>
       <br/>
-      FOOTER
+      FOOTER TODO
     </footer>
   </Container>
 )
