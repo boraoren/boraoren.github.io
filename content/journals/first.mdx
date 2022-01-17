@@ -5,12 +5,40 @@ readMore: don't be shy and click to read more.
 date: 12/01/2022
 ---
 
-# First blog post
+import {themeOverride} from "../pages/theme";
+import {
+    ChakraProvider,
+    extendTheme,
+    Image,
+    SimpleGrid,
+} from "@chakra-ui/react";
 
-Nice weather, nice mood. Try to implement version style in the blog of mine. What I used, <b style={{ color: "#4299E1"}}>chakra-ui</b>. Try to implement version style in the blog
 
-import { Text } from "@chakra-ui/react"
 
-<Text>
-    Hello1234
-</Text>
+<ChakraProvider theme={extendTheme(themeOverride)}>
+
+    # First blog post
+
+    <SimpleGrid columns={2} spacing={10}>
+
+        <Image src="https://knowpathology.com.au/wp-content/uploads/2018/07/Happy-Test-Screen-01.png"/>
+
+        there is a variant to create different component state like clicked,
+        enabled, hovered etc. Do you want how? <b>Click here</b> 😊
+
+        there is a variant to create different component state like clicked,
+        enabled, hovered etc. Do you want how? <b>Click here</b> 😊
+
+        <Image
+            src="https://www.sonictraveltesting.com.au/media/14157/1349-sonic-travel-testing-winter-olympics-b_page_1.png?anchor=center&mode=crop&width=1920&height=985&bgcolor=f3f5f9"/>
+
+    </SimpleGrid>
+
+    <br/>
+
+    <br/>
+
+
+</ChakraProvider>
+
+

@@ -1,76 +1,82 @@
-import { extendTheme } from '@chakra-ui/react'
-import '@fontsource/roboto/900.css'
-import '@fontsource/roboto/400.css'
-import '@fontsource/caveat/400.css'
+import {extendTheme} from '@chakra-ui/react';
 
-const theme = extendTheme({
-  fonts: {
-    caveat: "Caveat",
-    title: "Roboto",
-    subtitle: "Handlee",
-    "journal.summary": "Roboto"
-  },
-  fontSizes: {
-    xs: "0.75rem",
-    sm: "0.875rem",
-    md: "1rem",
-    lg: "1.125rem",
-    xl: "1.25rem",
-    "2xl": "1.5rem",
-    "3xl": "1.875rem",
-    "4xl": "2.25rem",
-    "5xl": "3rem",
-    "6xl": "3.75rem",
-    "7xl": "4.5rem",
-    "8xl": "6rem",
-    "9xl": "8rem",
-  },
-  colors: {
-    transparent: "transparent",
-    black: "#000",
-    white: "#fff",
-    primary: {
-      50: "#F7FAFC",
-      800: "#1A202C",
-      900: "#18181b",
+export const themeOverride = {
+    breakpoints: {
+        sm: "320px",
+        md: "768px",
+        lg: "960px",
+        xl: "1200px",
+        "2xl": "1536px",
     },
-    secondary: {
-      400: "#4299E1",
+    fonts: {
+        caveat: "Caveat",
+        primary: "Roboto",
+        subtitle: "Handlee",
     },
-  },
-  config: {
-    initialColorMode: "light",
-    useSystemColorMode: false,
-  },
-  breakpoints: {
-    sm: "320px",
-    md: "768px",
-    lg: "960px",
-    xl: "1200px",
-    "2xl": "1536px",
-  },
-  styles: {
-    global: {
-      '.mdx-prose': {
-        h1: {
-          fontSize: '4xl',
-          mb: '4',
-        },
-        h2: {
-          fontSize: '3xl',
-          mb: '4',
-        },
-        h3: {
-          fontSize: '2xl',
-          mb: '4',
-        },
-        p: {
-          fontSize: 'sm',
-          lineHeight: '1.4',
-        },
-      },
+    fontSizes: {
+        xs: "0.75rem",
+        sm: "0.875rem",
+        md: "1rem",
+        lg: "1.125rem",
+        xl: "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem",
+        "6xl": "3.75rem",
+        "7xl": "4.5rem",
+        "8xl": "6rem",
+        "9xl": "8rem",
     },
-  }
-});
+    colors: {
+        transparent: "transparent",
+        black: "#000",
+        white: "#fff",
+        primary: {
+            50: "#F7FAFC",
+            800: "#1A202C",
+            900: "#18181b",
+        },
+        secondary: {
+            400: "#4299E1",
+        },
+    },
+    config: {
+        initialColorMode: "light",
+        useSystemColorMode: false
+    },
+    styles: {
+        global: {
+            '.mdx-prose': {
+                h1: {
+                    fontSize: '4xl',
+                    mb: '4',
+                },
+                h2: {
+                    fontSize: '3xl',
+                    mb: '4',
+                },
+                h3: {
+                    fontSize: '2xl',
+                    mb: '4',
+                },
+                p: {
+                    fontSize: ['md', 'lg', 'xl', '2xl'],
+                    ml:'4',
+                    alignSelf: "center",
+                    fontFamily: "primary",
+                    fontWeight: 400,
+                    mt: -2,
+                    mr: '4'
+                }
+            },
+        }
+    }
+};
+
+
+const theme = extendTheme(
+    themeOverride
+);
 
 export default theme;

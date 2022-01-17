@@ -12,25 +12,6 @@ interface JournalSummaryProps {
 
 const JournalSummary: React.FC<JournalSummaryProps> = ({ day, children }) => {
 
-    function useProcessor(text) {
-        // @ts-ignore
-        const [Content, setContent] = useState(Fragment)
-
-        useEffect(() => {
-            unified()
-                .use(rehypeParse, {fragment: true})
-                .use(rehypeReact, {createElement, Fragment})
-                .process(text)
-                .then((file) => {
-                    setContent(file.result)
-                })
-        }, [text])
-
-        return Content
-    }
-
-
-
     return (
     <Container maxWidth={"150ch"} mt={7} ml={-3}>
       <Flex>

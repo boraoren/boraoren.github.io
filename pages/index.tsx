@@ -61,7 +61,7 @@ const IndexPage: React.FC<{
                         <Text
                             fontSize={["xl", "3xl", "5xl", "7xl"]}
                             color="primary.50"
-                            fontFamily={"title"}
+                            fontFamily={"primary"}
                             fontWeight={900}
                         >
                             {homePageData.hi["en-US"]} {homePageData.Im["en-US"]}{" "}
@@ -95,8 +95,8 @@ const IndexPage: React.FC<{
             >
                 JANUARY 2022
             </Text>
-            {journals.map((journal) => {
-                return <JournalSummary day={dateToDay(journal.frontmatter.date)}>
+            {journals.map((journal,index) => {
+                return <JournalSummary key={index} day={dateToDay(journal.frontmatter.date)}>
                     <>
                         {textToContent(journal.frontmatter.summary)}
                         &nbsp;<Link href={`journals/${journal.slug}`} style={{ fontWeight: "bold"}}>{journal.frontmatter.readMore}</Link>
