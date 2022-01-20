@@ -8,9 +8,7 @@ import {DateTime} from 'luxon'
 export const ROOT = process.cwd();
 export const POSTS_PATH = path.join(process.cwd(), "content/journals");
 
-export const getFileContent = (filename: string) => {
-    return fs.readFileSync(path.join(POSTS_PATH, filename), "utf8");
-};
+
 
 const getCompiledMDX = async (source: string) => {
     console.log("SOURCE", source);
@@ -48,31 +46,8 @@ const getCompiledMDX = async (source: string) => {
 
             return options;
         },
-        esbuildOptions: (options) => {
-            options.platform = 'node'
-
-            return options
-        },
     });
 
-    /*try {
-      return await bundleMDX(content, {
-        xdmOptions(options) {
-          options.remarkPlugins = [
-            ...(options.remarkPlugins ?? []),
-            ...remarkPlugins,
-          ];
-          options.rehypePlugins = [
-            ...(options.rehypePlugins ?? []),
-            ...rehypePlugins,
-          ];
-
-          return options;
-        },
-      });
-    } catch (error) {
-      throw new Error(error);
-    }*/
 };
 
 export const getSingleJournal = async (slug: string) => {
@@ -84,6 +59,11 @@ export const getSingleJournal = async (slug: string) => {
         code,
     };
 };
+
+export const getFileContent = (filename: string) => {
+    return fs.readFileSync(path.join(POSTS_PATH, filename), "utf8");
+};
+
 export const getAllJournal = () => {
     const journals: JournalModel[] = fs
         .readdirSync(POSTS_PATH)

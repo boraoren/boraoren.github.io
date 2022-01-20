@@ -8,28 +8,18 @@ import Document, {
 
 import myTheme from "../data/themes/index";
 import { Button, ColorModeScript, useColorMode } from "@chakra-ui/react";
-import theme from "./theme";
+import theme from "../utils/theme";
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
-
-    return initialProps;
+    return { ...initialProps };
   }
 
-  createFontFamilyLinks = () => {
-    const fontFamilyLinks = [];
-    for (const [key, font] of Object.entries(myTheme.fontFamily)) {
-      fontFamilyLinks.push(<link key={key} href={font.url} rel="stylesheet" />);
-    }
-    return fontFamilyLinks;
-  };
-
   render() {
-    
     return (
       <Html>
-        <Head>{this.createFontFamilyLinks()}</Head>
+        <Head/>
         <body>
           {/* 👇 Here's the chakra-ui color script */}
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />

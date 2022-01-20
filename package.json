@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "export": "next export",
     "type-check": "tsc"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.4",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
@@ -25,6 +26,8 @@
     "next-compose-plugins": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-parallax-tilt": "^1.5.88",
+    "react-spring": "^9.4.2",
     "rehype-parse": "^8.0.3",
     "rehype-react": "^7.0.4",
     "unified": "^10.1.1"

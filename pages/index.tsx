@@ -21,27 +21,12 @@ const IndexPage: React.FC<{
     homePageData: HomePageData;
     journals: JournalModel[];
 }> = ({homePageData, journals}) => {
+
     const {colorMode, toggleColorMode} = useColorMode();
-
-    const textToContent = (text: string) => {
-        // @ts-ignore
-        const [Content, setContent] = useState(Fragment)
-
-        useEffect(() => {
-            unified()
-                .use(rehypeParse, {fragment: true})
-                .use(rehypeReact, {createElement, Fragment})
-                .process(text)
-                .then((file) => {
-                    setContent(file.result)
-                })
-        }, [text])
-
-        return Content
-    }
 
     return (
         <Layout title={homePageData.pageTitle["en-US"]}>
+
             <Flex m={2} justifyContent={"space-between"}>
                 <Box>
                     <Text
@@ -55,7 +40,7 @@ const IndexPage: React.FC<{
                     </Text>
                 </Box>
             </Flex>
-            <Box bg="primary.900" m={1}>
+            <Box bg="primary.900" m={1}  rounded={"xl"}>
                 <Flex align={"center"}>
                     <Flex direction={"column"} alignItems={"center"} flex={1}>
                         <Text
@@ -70,7 +55,7 @@ const IndexPage: React.FC<{
                         <Text
                             fontSize={["md", "xl", "3xl", "5xl"]}
                             color="secondary.400"
-                            fontFamily={"subtitle"}
+                            fontFamily={"secondary"}
                             fontWeight={900}
                         >
                             {homePageData.title["en-US"]}
@@ -95,11 +80,11 @@ const IndexPage: React.FC<{
             >
                 JANUARY 2022
             </Text>
-            {journals.map((journal,index) => {
+            {journals.map((journal, index) => {
                 return <JournalSummary key={index} day={dateToDay(journal.frontmatter.date)}>
                     <>
-                        {textToContent(journal.frontmatter.summary)}
-                        &nbsp;<Link href={`journals/${journal.slug}`} style={{ fontWeight: "bold"}}>{journal.frontmatter.readMore}</Link>
+                        <span dangerouslySetInnerHTML={{__html: journal.frontmatter.summary}} />
+                        &nbsp;<Link href={`journals/${journal.slug}`} style={{fontWeight: "bold"}}>{journal.frontmatter.readMore}</Link>
                     </>
                 </JournalSummary>
             })}
@@ -113,6 +98,7 @@ const IndexPage: React.FC<{
 
 export const getStaticProps: GetStaticProps = async () => {
     try {
+
         const journals = getAllJournal();
         return {props: {homePageData: homePageData, journals}};
     } catch (err) {

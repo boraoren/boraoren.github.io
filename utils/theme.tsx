@@ -11,7 +11,17 @@ export const themeOverride = {
     fonts: {
         caveat: "Caveat",
         primary: "Roboto",
-        subtitle: "Handlee",
+        secondary: "Handlee",
+    },
+    textStyles: {
+        h1: {
+            fontSize: ['24px', '48px', '6xl'],
+            fontWeight: 900,
+            textTransform: "uppercase",
+            fontFamily: "primary",
+
+            ml: 4
+        },
     },
     fontSizes: {
         xs: "0.75rem",
@@ -51,6 +61,7 @@ export const themeOverride = {
                 h1: {
                     fontSize: '4xl',
                     mb: '4',
+                    textTransform: "uppercase",
                 },
                 h2: {
                     fontSize: '3xl',

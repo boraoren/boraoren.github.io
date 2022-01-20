@@ -1,10 +1,10 @@
-import React from "react";
+import React, {FC} from "react";
 import {getMDXComponent} from "mdx-bundler/client";
 import {getAllJournal, getSingleJournal} from "../../utils/mdx";
 import Layout from "../../components/Layout";
 import {Frontmatter} from "../../interfaces/JournalModel";
 import {ChakraProvider} from "@chakra-ui/react";
-import theme from "../theme";
+import theme from "../../utils/theme";
 import {getMDXExport} from 'mdx-bundler/client'
 
 interface JournalProps {
@@ -12,20 +12,9 @@ interface JournalProps {
     frontmatter: Frontmatter;
 }
 
-/*const Paragraph: React.FC = props => {
-    console.log("CHILDREN", props);
-    if (typeof props.children !== 'string' && props.children.type === 'img') {
-        return <>{props.children}</>
-    }
-
-    return <p {...props} />
-}*/
-
-const Journal: React.FC<JournalProps> = ({code, frontmatter}) => {
-    //const mdxExport = getMDXExport(code);
+const Journal: FC<JournalProps> = ({code, frontmatter}) => {
     const Component = React.useMemo(() => getMDXComponent(code), [code]);
-    //const Component = React.useMemo(() => mdxExport.default, [code]);
-    const MDXWrapper = (props) => <div className='mdx-prose' {...props} ><Component /></div>
+    const MDXWrapper = (props) => <div className='mdx-prose' {...props} ><Component/></div>
 
     return (
         <Layout title={frontmatter.title}>
