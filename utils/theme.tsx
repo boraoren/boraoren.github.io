@@ -15,12 +15,10 @@ export const themeOverride = {
     },
     textStyles: {
         h1: {
-            fontSize: ['24px', '48px', '6xl'],
-            fontWeight: 900,
+            fontSize: ['2xl', '4xl', '6xl'],
             textTransform: "uppercase",
             fontFamily: "primary",
-
-            ml: 4
+            fontWeight: 600,
         },
     },
     fontSizes: {
@@ -41,9 +39,11 @@ export const themeOverride = {
     colors: {
         transparent: "transparent",
         black: "#000",
-        white: "#fff",
+        white: "#F7F5F0",
         primary: {
             50: "#F7FAFC",
+            400: "#94a3b8",
+            600: "#475569",
             800: "#1A202C",
             900: "#18181b",
         },

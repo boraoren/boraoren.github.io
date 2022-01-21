@@ -8,8 +8,6 @@ import {DateTime} from 'luxon'
 export const ROOT = process.cwd();
 export const POSTS_PATH = path.join(process.cwd(), "content/journals");
 
-
-
 const getCompiledMDX = async (source: string) => {
     console.log("SOURCE", source);
     if (process.platform === "win32") {

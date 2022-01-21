@@ -1,11 +1,9 @@
 import React, {FC} from "react";
 import {getMDXComponent} from "mdx-bundler/client";
 import {getAllJournal, getSingleJournal} from "../../utils/mdx";
-import Layout from "../../components/Layout";
 import {Frontmatter} from "../../interfaces/JournalModel";
-import {ChakraProvider} from "@chakra-ui/react";
-import theme from "../../utils/theme";
-import {getMDXExport} from 'mdx-bundler/client'
+import LayoutJournal from "../../components/LayoutJournal";
+import CartoonTemplate from "../../components/templates/cartoon";
 
 interface JournalProps {
     code: any;
@@ -14,12 +12,14 @@ interface JournalProps {
 
 const Journal: FC<JournalProps> = ({code, frontmatter}) => {
     const Component = React.useMemo(() => getMDXComponent(code), [code]);
-    const MDXWrapper = (props) => <div className='mdx-prose' {...props} ><Component/></div>
+    const MDXWrapper = (props) => <div className='mdx-prose' {...props} ><Component components={{
+        CartoonTemplate,
+    }}/></div>
 
     return (
-        <Layout title={frontmatter.title}>
+        <LayoutJournal title={frontmatter.title}>
             <MDXWrapper/>
-        </Layout>
+        </LayoutJournal>
     );
 };
 

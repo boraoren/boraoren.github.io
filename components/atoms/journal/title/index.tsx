@@ -1,11 +1,12 @@
 import React from "react";
-import {Text} from "@chakra-ui/react";
+import {Badge, Text} from "@chakra-ui/react";
 
-const JournalTitle: React.FC = ({children}) => {
+const JournalTitle = (props) => {
 
     return (
-        <Text textStyle='h1' color="primary.900">
-            {children}
+        <Text textStyle='h1'>
+            {props.children}
+
         </Text>
     );
 };

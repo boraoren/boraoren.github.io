@@ -1,16 +1,17 @@
-import React, {ReactNode} from 'react'
+import React, {FC, ReactNode} from 'react'
 import Head from 'next/head'
-import {Container, Flex, SimpleGrid} from '@chakra-ui/react'
+import {Center, Container, Flex, SimpleGrid} from '@chakra-ui/react'
 import JournalTitle from "./atoms/journal/title";
 import {ArrowBackIcon} from "@chakra-ui/icons";
 import {useRouter} from 'next/router'
+import Footer from "./pages/footer";
 
-type Props = {
-    children?: ReactNode
-    title?: string
+interface LayoutJournalProps {
+    children?: ReactNode;
+    title?: string;
 }
 
-const LayoutJournal = ({children, title = 'This is the default title'}: Props) => {
+const LayoutJournal: FC<LayoutJournalProps> = ({children, title}) => {
     const router = useRouter();
 
     return (
@@ -24,26 +25,25 @@ const LayoutJournal = ({children, title = 'This is the default title'}: Props) =
                 <nav>
                 </nav>
             </header>
-            <Flex color='white' direction="row">
-                <>
-                    <ArrowBackIcon boxSize={['5', '10', '20']}
-                                   color="secondary.400"
-                                   alignSelf="center"
-                                   onClick={()=> router.back()}
-                    />
-                    <JournalTitle>
-                        {title}
-                    </JournalTitle>
-                </>
+            <Flex direction="row">
+                <ArrowBackIcon boxSize={['5', '10', '20']}
+                               color="secondary.400"
+                               alignSelf="center"
+                               _hover={{
+                                   cursor: "pointer",
+                                   color: "black"
+                               }}
+
+                               onClick={() => router.back()}/>
+                <JournalTitle>
+                    {title}
+                </JournalTitle>
             </Flex>
-            {children}
+            <Center mt={50}>
+                {children}
+            </Center>
             <br/>
-            <footer>
-                <hr/>
-                <span/>
-                <br/>
-                FOOTER TODO
-            </footer>
+            <Footer/>
         </Container>
     )
 };

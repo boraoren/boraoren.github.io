@@ -1,6 +1,7 @@
 import React, {ReactNode} from 'react'
 import Head from 'next/head'
 import {ChakraProvider, Container} from '@chakra-ui/react'
+import Footer from "./pages/footer";
 
 type Props = {
     children?: ReactNode
@@ -20,12 +21,7 @@ const Layout = ({children, title = 'This is the default title'}: Props) => (
         </header>
         {children}
         <br/>
-        <footer>
-            <hr/>
-            <span/>
-            <br/>
-            FOOTER TODO
-        </footer>
+        <Footer/>
     </Container>
 )
 
