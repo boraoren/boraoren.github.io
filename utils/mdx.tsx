@@ -14,7 +14,7 @@ export const JOURNALS_PATH = path.join(process.cwd(), "./data/content/journals")
 export const PORTFOLIOS_PATH = path.join(process.cwd(), "./data/content/portfolios");
 
 const getCompiledMDX = async (source: string) => {
-    console.log("SOURCE", source);
+
     if (process.platform === "win32") {
         process.env.ESBUILD_BINARY_PATH = path.join(
             ROOT,
