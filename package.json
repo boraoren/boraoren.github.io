@@ -18,7 +18,7 @@
     "@fontsource/handlee": "^4.5.0",
     "@fontsource/roboto": "^4.5.1",
     "esbuild": "^0.14.11",
-    "framer-motion": "^5.5.5",
+    "framer-motion": "^6.2.1",
     "gray-matter": "^4.0.3",
     "luxon": "^2.3.0",
     "mdx-bundler": "^8.0.1",
