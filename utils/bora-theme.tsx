@@ -1,11 +1,5 @@
 import {extendTheme} from '@chakra-ui/react';
 
-const h1 = {
-    fontSize: ['xl', '2xl', '4xl', '6xl'],
-    fontFamily: "primary",
-    fontWeight: 600,
-}
-
 export const themeOverride = {
     breakpoints: {
         sm: "320px",
@@ -17,10 +11,15 @@ export const themeOverride = {
     fonts: {
         caveat: "Caveat",
         primary: "Roboto",
-        secondary: "Open Sans",
+        secondary: "Handlee",
     },
     textStyles: {
-        h1,
+        h1: {
+            fontSize: ['2xl', '4xl', '6xl'],
+            textTransform: "uppercase",
+            fontFamily: "primary",
+            fontWeight: 600,
+        },
     },
     fontSizes: {
         xs: "0.75rem",
@@ -49,7 +48,7 @@ export const themeOverride = {
             900: "#18181b",
         },
         secondary: {
-            400: "#5DB075",
+            400: "#4299E1",
         },
     },
     config: {
@@ -59,55 +58,49 @@ export const themeOverride = {
     styles: {
         global: {
             '.mdx-prose': {
-                h1,
+                h1: {
+                    fontSize: '4xl',
+                    mb: '4',
+                    textTransform: "uppercase",
+                },
                 h2: {
                     fontSize: '3xl',
-                    color: "secondary.400",
-                    mb: 2,
-                    fontFamily: "secondary",
+                    mb: '4',
                 },
                 h3: {
                     fontSize: '2xl',
-                    fontFamily: "primary",
-                    fontWeight: "bold",
-                    mb: 2
-
+                    mb: '4',
                 },
                 p: {
                     fontSize: ['md', 'lg', 'xl', '2xl'],
-                    ml: '4',
+                    ml:'4',
                     alignSelf: "center",
                     fontFamily: "primary",
                     fontWeight: 400,
-                    mt: 2,
-                    mb: 4
+                    mt: -2,
+                    mr: '4'
                 },
                 ul: {
                     margin: "revert",
                     padding: "revert",
                     fontSize: ['md', 'lg', 'xl', '2xl'],
+                    ml:'4',
                     alignSelf: "center",
                     fontFamily: "primary",
                     fontWeight: 400,
-                    mt: 4
-                },
-                li: {
-                    mb: 3
+                    mt: -2,
+                    mr: '4'
                 },
                 ol: {
                     margin: "revert",
                     padding: "revert",
                     fontSize: ['md', 'lg', 'xl', '2xl'],
+                    ml:'4',
                     alignSelf: "center",
                     fontFamily: "primary",
                     fontWeight: 400,
-                },
-                code: {
-                    whiteSpace: "pre-wrap",
-                },
-                pre: {
-                    whiteSpace: "pre-wrap",
-                    mb: 5
+                    mt: -2,
+                    mr: '4'
                 }
             },
         }

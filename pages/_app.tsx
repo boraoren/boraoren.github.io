@@ -7,6 +7,8 @@ import '@fontsource/roboto/900.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/caveat/400.css';
 import '@fontsource/handlee/400.css';
+import '@fontsource/open-sans/500.css'
+import '@fontsource/open-sans/500-italic.css'
 
 
 function MyApp({Component, pageProps}: AppProps) {

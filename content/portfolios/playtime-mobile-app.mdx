@@ -1,0 +1,485 @@
+---
+title: PlayTime Mobile App
+summary: PlayTime Mobile Summary
+image: portfolios/playtime-mobile-app/playtime-mobile-app.png
+date: 21/01/2022
+---
+
+export const imagePath = "../../../images/portfolios/playtime-mobile-app/";
+export const featureNotes = [
+    {
+        id: 1,
+        note: "Show open playgroup sessions on calendar",
+        urgentValue: 40,
+        importantValue: 20,
+    }, {
+        id: 2,
+        note: "list playgroup session for a selected day",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 3,
+        note: "show details of a playgroup session",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 4,
+        note: "join a playgroup session",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 5,
+        note: "create a profile",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 6,
+        note: "create children's profiles under a parent's profile",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 7,
+        note: "cancel booking in a playgroup",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 8,
+        note: "create a playgroup session",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 9,
+        note: "cancel a playgroup session",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 10,
+        note: "send request to join a playgroup session",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 11,
+        note: "approve/reject a request to join a playgroup session",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 12,
+        note: "send request to join a playgroup for each/all of my children",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 13,
+        note: "show participants of a playgroup session",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 14,
+        note: "edit playgroup session details",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 15,
+        note: "cancel a request to join a playgroup session",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 16,
+        note: "chat room for playgroup session",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 17,
+        note: "send a group message to all session participants",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 18,
+        note: "send message to a playgroup participant",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 19,
+        note: "send individual message to session creator",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 20,
+        note: "filtering on calendar",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 21,
+        note: "sign up using telephone number verification",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 22,
+        note: "send a notification to users when a new session is created",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 23,
+        note: "send invite to join a playgroup session",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 24,
+        note: "show my waiting requests to join a session",
+        urgentValue: 0,
+        importantValue: 0
+    }, {
+        id: 25,
+        note: "call a parent",
+        urgentValue: 0,
+        importantValue: 0
+    }];
+
+
+<br/><br/>
+
+# Problem And Goal
+
+## <a name="assumptions">Problem</a>
+- It is very hard for working parents to keep their children busy during school
+holidays
+- Playgroup sessions are good to bring children together and have fun and socialise
+
+## <a name="assumptions">Product Goal</a>
+Help working parents work collaboratively to keep their children busy and happy
+with playgroup sessions during school holidays
+
+- Working parents find other parents to look after their kids while they are at work,
+especially during school holidays
+- Working parents can also look after other parent’s children in return
+- Parents can welcome children to their house in order to keep their children
+socialised and improve their children's social skills
+
+# Five User Stories
+
+## USER STORY 1 : Create a Playgroup
+As a parent who has some time to spend with children, I want to create a playgroup session depending
+on my availability, so that my kids can play with other kids at our house and socialise during school
+holidays
+
+## USER STORY 2 : List Playgroups
+As a PlayTime app user, I want to see the playgroup sessions with vacancy, so that I can make bookings for my
+daughter and I don’t need to take a day off from work
+
+## USER STORY 3 : Join a Playgroup
+As a working parent using PlayTime app, I want my children to join a playgroup session created by other
+parents, so that I can leave my kids to people I know and let my children have good time under their
+supervision
+
+## USER STORY 4 : Cancel/Reschedule a Playgroup
+As a parent who has created a playgroup session on Playtime app, I can only reschedule or cancel the playgroup
+session more than 4 hours before the start of the session, so that the other parents can organise their days
+accordingly
+
+## USER STORY 5 : Send notification to user when a new playgroup is created
+As a working parent, I want to know the playgroup vacancies as soon they are created so that I can book my kid’s
+place in the playgroup before anyone else
+
+# Assumptions
+
+- The user is asked about their residential state when they sign up, so the application provides school holiday calendar for the
+given state
+- The Calendar shows only the Playground sessions within 2km to the school area which have vacancy
+- The application doesn’t allow a user to supervise more than 6 children for a playgroup
+- Since the product will be available only in Australia, only English language is supported.
+- The app shows the current or next closest Term’s School Holidays calendar by default
+- The app also works when no network is available to check the playgroup session from the last online usage. But the user can
+create or join a session when he/she is online.
+- The app can also be opened when no network is available
+- The app provides two 4-hour playgroup sessions a day by default:
+- 08:30 - 12:30 - morning session
+- 13:00 - 17:00 - afternoon session
+- The user is only allowed to reserve 4-hour-sessions, not less
+
+# User Story 1 / Create Playground
+
+<Components.Chakra.SimpleGrid columns={[1, null, 2]} spacing='40px'>
+    <Components.Chakra.Image
+        src={`${imagePath}playtime-mobile-app-user-story-1.png`}
+        alt='User Story 1'
+    />
+    <Components.Chakra.Box>
+        __As a__ parent who has some time to spend with children, <br/><br/>
+        __I want__ to create a playgroup session depending on my availability<br/><br/>
+        __so that__ my kids can play with other kids at our house and socialise during school holidays<br/><br/>
+    </Components.Chakra.Box>
+</Components.Chakra.SimpleGrid>
+
+## Success Metrics
+
+- The number of playgroup sessions created in a school holiday term
+- The time passed until the user creates his/her first playgroup session
+- The average number of created playgroups per user
+
+## Acceptance Criteria
+
+### Acceptance Criteria 1 : Create Playgroup
+
+```
+GIVEN the user signs in PlayTime App
+    AND is on “Calendar” screen
+WHEN the user clicks on “Create” button
+THEN the user is redirected to the “Create Playgroup” screen to fill the details
+    AND current day is selected
+    AND organiser is set as “me” and shows user’s profile picture
+    AND location is pre-populated with the home address of current user by default and it is enabled
+    AND the telephone number field is pre-populated with user’s mobile number and it is disabled
+    AND the number of children is set to 1 and enabled
+```
+
+### Acceptance Criteria 2 : Select Phone Number
+
+```
+GIVEN the user signs in PlayTime App
+    AND is on “Calendar” screen
+WHEN the user clicks on a day from the “Calendar” screen
+    AND clicks on “Create” button
+THEN the user is redirected to the “Create Playgroup” screen to fill the details
+    AND current day is selected
+    AND organiser is set as “me” and shows user’s profile picture
+    AND location is pre-populated with the home address of current user by default and it is enabled
+    AND the telephone number field is pre-populated with user's mobile number and it is disabled and the number of participant is filled with “Please select” and enabled
+```
+
+### Acceptance Criteria 3 : Create Playgroup / Shows a confirmation
+
+```
+GIVEN the user signs in PlayTime App
+    AND the user has selected the day
+    AND is on “Create Playgroup” screen,
+WHEN the user selects the time of the session as “8:30-12:30”
+    AND leaves the location with default value
+    AND selects the number of the participants as 4
+    AND the user clicks on “Create” button
+THEN the system shows a confirmation dialog asking if the user confirms to create a playgroup with the given parameters
+(day, time, location, number of participants)
+```
+
+### Acceptance Criteria 4 : Create Playgroup / Field error messages
+
+```
+GIVEN the user signs in PlayTime App
+    AND the user has selected the day
+    AND is on “Create Playgroup” screen,
+WHEN user doesn’t select the time and the number of participants
+    AND user clicks on “Create” button
+THEN Text Field Error messages appear for time and number of participant fields on “Create Playgroup” screen
+```
+
+### Acceptance Criteria 5 : Create Playgroup / And notification sends
+
+```
+GIVEN the user signs in PlayTime App
+    AND the user has selected the day
+    AND is on “Create Playgroup” screen,
+WHEN user selects time slot
+    AND location is set as user’s home address
+    AND user selects the number of the participants as 4
+    AND user clicks on “Create” button
+THEN the system creates a new playgroup session
+    AND a “Playgroup is Created” Info message is shown to the user on the “Playgroup Session” screen
+    AND the system sends a notification to other users about this new playgroup
+```
+
+# User Story 3 / Join a playgroup
+
+<Components.Chakra.SimpleGrid columns={[1, null, 2]} spacing='40px'>
+    <Components.Chakra.Box>
+        __As a__ working parent using PlayTime app, <br/><br/>
+        __I want__ my children to join a playgroup session created by other parents, <br/><br/>
+        __so that__ I can leave my kids to people I know and let my children have good time under their supervision<br/><br/>
+    </Components.Chakra.Box>
+
+    <Components.CartoonBox
+        imagePath="../../images/portfolios/playtime-mobile-app/"
+        images={["playtime-mobile-app-user-story-3.png",
+            "playtime-mobile-app-user-story-3-1.png"]}/>
+
+</Components.Chakra.SimpleGrid>
+
+## Success Metrics
+
+- The average number of online application sessions per user per week or per day
+- The average duration of a session on application
+- The percentage of users joining a playgroup session
+- The average number of joined playgroups per user
+
+## Acceptance Criteria
+
+### Acceptance Criteria 1 : Join A Playgroup / Participants alert message
+
+```
+GIVEN the user has selected a playgroup with vacancy from the Calendar
+    AND the user is on a Join Playgroup screen for that selected playgroup
+WHEN the user clicks on “Join”
+THEN the system shows an Alert message next to number of participant field saying that the user has to select the number of
+participants
+```
+
+### Acceptance Criteria 2 : Join A Playgroup / Select number of participants
+
+```
+GIVEN the user is on a Join Playgroup screen
+WHEN user selects 1 from the Number of Participants drop down
+    AND clicks on “Join”
+THEN the system adds the user to the participants of this playgroup
+    AND the number of available slots for this playgroup is decreased by 1.
+```
+
+# Groups And Individuals To Contact For User Stories
+
+<Components.STable
+    header={["Whose involvement is needed", "Purpose"]}
+    rows={[
+        {columns: ["Legal and compliance", "To identify terms and conditions of usage, data privacy"]},
+        {
+            columns: ["Product Designer / UX Designer", <>
+                <li>Identify the market needs and define personas through interviews with potential users (5
+                    participants)
+                </li>
+                <li>Discuss the feedbacks to update scope and design</li>
+                <li>Work collaboratively on the screen designs and wireframes and prototypes</li>
+            </>]
+        },
+        {
+            columns: ["Engineering Lead / Software Architect", <>
+                <li>Discuss the feasibility of solution design to understand the work involved</li>
+                <li>Discuss the scope of the user story whether to break down into smaller pieces</li>
+                <li>Identify the critical spike and the engineering design work to complete prior to feature
+                    development
+                </li>
+                <li>Discuss about the dependencies and risks</li>
+            </>]
+        },
+        {
+            columns: ["QA specialist", <>
+                <li>Manage feature testing</li>
+                <li>Share and review test strategy</li>
+            </>]
+        },
+        {columns: ["Data Analyst", "Review analytics tracking requirements"]}
+    ]}/>
+
+
+
+# Prioritization Logic
+
+The app predominately aims to provide a shared calendar between users so that they can create a playgroup or
+join an existing one.
+- In terms of practicality and a better error prevention, users should be given enough flexibility to make a change
+and contact each other, for MVP only telephone numbers of users are provided, in following sprints on-product
+messaging and chat rooms will be added.
+- The most important feature is selected as __USER STORY 1 - CREATE A PLAYGROUP SESSION__ due to the fact that
+nobody can join a session without knowing who has some availability to spend with children. To understand how
+interested people are in this application, without any further investment the MVP version can even just start with
+just providing the organiser's telephone number and letting them call each other and arrange booking outside the
+app.
+- __USER STORY 2 - LIST PLAYGROUP__ is one of the important features letting the users to discover and find playgroups
+- __USER STORY 4 - CANCEL/RESCHEDULE PLAYGROUP__ is especially for error prevention letting the playgroup organiser
+to take action when something urgent happens and let the other parents change their plans
+- __USER STORY 3 - JOIN A PLAYGROUP__ connecting the parents without needing to make a phone call and let them
+arrange their time with a single click. This comes after USER STORY 2 in list, because this requires first to find the
+available playgroup that matches with a parent time schedule and then joining a session. This can be broaden with
+a Request to join-Approve/Reject feature in the next releases
+- __USER STORY 5 - NOTIFY USERS WHEN A NEW PLAYGROUP IS CREATED__ aims better retention rate, informing
+users of new playgroup sessions and let them come back to product more often
+
+# Prioritised User Stories
+
+<Components.STable
+    header={["Priority", "Prioritised User Stories"]}
+    rows={[
+        {
+            columns: ["1",
+                <><b>USER STORY 1</b> - Create a Playgroup As a parent who has some time to
+                    spend with children, I want to create a playgroup session depending
+                    on my availability, so that my kids can play with other kids at
+                    our house and socialise during school holidays</>
+            ]
+        }, {
+            columns: ["2",
+                <>
+                    <b>User Story 2 - List Playgroups</b>
+                    As a PlayTime app user, I want to see the playgroup sessions with vacancy, so that I can make
+                    bookings for
+                    my daughter and I don’t need to take a day off from work
+                </>]
+        }, {
+            columns: ["3",
+                <>
+                    <b>User Story 4 - Cancel/Reschedule a Playgroup</b>
+                    As a parent who has created a playgroup session on
+                    Playtime app, I can only reschedule or cancel the
+                    playgroup session more than 4 hours before the start
+                    of the session, so that the other parents can organise
+                    their days accordingly
+                </>]
+        },
+        {
+            columns: ["4",
+                <>
+                    <b>User Story 3 - Join a Playgroup</b>
+                    As a working parent using PlayTime app,
+                    I want my children to join a playgroup session
+                    created by other parents, so that I can leave
+                    my kids to people I know and let my children
+                    have good time under their supervision
+                </>]
+        },
+        {
+            columns: ["4",
+                <>
+                    <b>User Story 5 - Send notification to user</b>
+                    when a new playgroup is created As a working parent,
+                    I want to know the playgroup vacancies as soon they are
+                    created so that I can book my kid’s place in the playgroup
+                    before anyone else
+                </>]
+        }
+    ]}/>
+
+
+
+# Feature Prioritisation Matrix
+
+## Feature Ideation
+<Components.FeatureStickyNotes featureNotes={featureNotes}/>
+
+## Feature Prioritisation
+
+<Components.FeatureMatrixEisenhower featureNotes={featureNotes}/>
+
+# Where do we go from here? / Key Features
+
+## MVP
+
+### Priority 0
+
+- Show playgroup sessions which have vacancies on calendar
+- Create playgroup session
+- List playgroup sessions for a selected day
+- Show playgroup session detail
+- Join a playgroup session
+- Edit/Cancel a playgroup session
+- Notify users when a new playgroup session is created
+
+### Priority 1
+
+Send a Request to Join a Playgroup
+- Approve/Reject a Request to Join a Playgroup
+- Cancel a Request to Join a Playgroup
+- Cancel a playgroup booking
+- Send message to individuals within session
+- Send message to individuals through profile page
+
+### Priority 2
+
+- Invite a user to a playgroup session
+- Show participants of a playgroup session
+- Filtering on Calendar (Show sessions I have created/others have created)
+- Message broadcasting for a playgroup session
+

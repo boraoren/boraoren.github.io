@@ -1,12 +1,11 @@
 import React from "react";
-import {Badge, Text} from "@chakra-ui/react";
+import {Text} from "@chakra-ui/react";
 
-const JournalTitle = (props) => {
+const JournalTitle= ({children}) => {
 
     return (
-        <Text textStyle='h1'>
-            {props.children}
-
+        <Text textStyle='h1' >
+            {children}
         </Text>
     );
 };

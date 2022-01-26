@@ -9,7 +9,7 @@ type Props = {
 }
 
 const Layout = ({children, title = 'This is the default title'}: Props) => (
-    <Container maxWidth={1000} height={"100vh"}>
+    <Container maxWidth={1200} height={"100vh"}>
         <Head>
             <title>{title}</title>
             <meta charSet="utf-8"/>

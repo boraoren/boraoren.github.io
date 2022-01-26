@@ -3,10 +3,15 @@ import path from "path";
 import matter from "gray-matter";
 import {bundleMDX} from "mdx-bundler";
 import JournalModel from "../interfaces/JournalModel";
-import {DateTime} from 'luxon'
+import {DateTime} from 'luxon';
+import remarkGfm from 'remark-gfm';
+import remarkToc from 'remark-toc'
+import rehypeHighlight from "rehype-highlight";
+
 
 export const ROOT = process.cwd();
-export const POSTS_PATH = path.join(process.cwd(), "content/journals");
+export const JOURNALS_PATH = path.join(process.cwd(), "content/journals");
+export const PORTFOLIOS_PATH = path.join(process.cwd(), "content/portfolios");
 
 const getCompiledMDX = async (source: string) => {
     console.log("SOURCE", source);
@@ -27,11 +32,12 @@ const getCompiledMDX = async (source: string) => {
         );
     }
     // Add your remark and rehype plugins here
-    const remarkPlugins = [];
-    const rehypePlugins = [];
+    const remarkPlugins = [remarkGfm, [remarkToc,{tight: true, ordered: true}]];
+    const rehypePlugins = [rehypeHighlight];
 
     return await bundleMDX({
         source, xdmOptions: (options) => {
+            // @ts-ignore
             options.remarkPlugins = [
                 ...(options.remarkPlugins ?? []),
                 ...remarkPlugins,
@@ -41,7 +47,6 @@ const getCompiledMDX = async (source: string) => {
                 ...rehypePlugins,
             ];
 
-
             return options;
         },
     });
@@ -49,7 +54,7 @@ const getCompiledMDX = async (source: string) => {
 };
 
 export const getSingleJournal = async (slug: string) => {
-    const source = getFileContent(`${slug}.mdx`);
+    const source = getFileContent(`${slug}.mdx`, JOURNALS_PATH);
     const {code, frontmatter} = await getCompiledMDX(source);
 
     return {
@@ -58,16 +63,12 @@ export const getSingleJournal = async (slug: string) => {
     };
 };
 
-export const getFileContent = (filename: string) => {
-    return fs.readFileSync(path.join(POSTS_PATH, filename), "utf8");
-};
-
 export const getAllJournal = () => {
     const journals: JournalModel[] = fs
-        .readdirSync(POSTS_PATH)
+        .readdirSync(JOURNALS_PATH)
         .filter((path) => /\.mdx?$/.test(path))
         .map((fileName) => {
-            const source = getFileContent(fileName);
+            const source = getFileContent(fileName, JOURNALS_PATH);
             const slug = fileName.replace(/\.mdx?$/, "");
             const {data} = matter(source);
 
@@ -78,6 +79,38 @@ export const getAllJournal = () => {
         });
 
     return sortJournals(journals);
+};
+
+export const getSinglePortfolio = async (slug: string) => {
+    const source = getFileContent(`${slug}.mdx`, PORTFOLIOS_PATH);
+    const {code, frontmatter} = await getCompiledMDX(source);
+
+    return {
+        frontmatter,
+        code,
+    };
+};
+
+export const getAllPortfolio = () => {
+    const journals: JournalModel[] = fs
+        .readdirSync(PORTFOLIOS_PATH)
+        .filter((path) => /\.mdx?$/.test(path))
+        .map((fileName) => {
+            const source = getFileContent(fileName, PORTFOLIOS_PATH);
+            const slug = fileName.replace(/\.mdx?$/, "");
+            const {data} = matter(source);
+
+            return {
+                frontmatter: data,
+                slug: slug,
+            } as JournalModel;
+        });
+
+    return sortJournals(journals);
+};
+
+export const getFileContent = (filename: string, folderPath) => {
+    return fs.readFileSync(path.join(folderPath, filename), "utf8");
 };
 
 

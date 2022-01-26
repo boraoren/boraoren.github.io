@@ -8,9 +8,11 @@ export interface CartoonBoxProps {
     images: string[]; // i-am-so-exited-1-1.png
     speechBalloonImage?: string; // i-am-so-exited-1-2.png
     tiltEnable?: boolean;
+    size?: number;
 }
 
 const CartoonBox: FC<CartoonBoxProps> = ({
+                                             size,
                                              imagePath,
                                              images,
                                              speechBalloonImage,
@@ -18,7 +20,6 @@ const CartoonBox: FC<CartoonBoxProps> = ({
                                          }) => {
 
     const [props, set] = useSpring(() => ({opacity: 0, position: "absolute", transform: "translate(50px, 0px)"}));
-    const journalImagesPath = `../../images/journals/${imagePath}/`;
 
     const onEnter = (eventType) => {
         set({
@@ -50,10 +51,10 @@ const CartoonBox: FC<CartoonBoxProps> = ({
             onLeave={onLeave}
             style={{
                 transformStyle: "preserve-3d",
-                backgroundImage: `url('${journalImagesPath}${images[0]}')`,
+                backgroundImage: `url('${imagePath}${images[0]}')`,
                 backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
-                borderRadius: "25px"
+                borderRadius: "25px",
             }}>
 
             <SimpleGrid columns={1} spacingX='1px' spacingY='20px' style={{
@@ -61,14 +62,14 @@ const CartoonBox: FC<CartoonBoxProps> = ({
             }}>
 
                 {images[1] &&
-                <Image src={`${journalImagesPath}${images[1]}`} alt="pic" style={{
+                <Image src={`${imagePath}${images[1]}`} alt="pic" style={{
                     width: "100%",
                 }}>
                 </Image>
                 }
 
                 {images[2] &&
-                <Image src={`${journalImagesPath}${images[2]}`} alt="pic" style={{
+                <Image src={`${imagePath}${images[2]}`} alt="pic" style={{
                     position: "absolute"
                 }}>
                 </Image>
@@ -78,7 +79,7 @@ const CartoonBox: FC<CartoonBoxProps> = ({
                 {speechBalloonImage &&
                 //@ts-ignore
                 <animated.span style={props}>
-                    <Image src={`${journalImagesPath}${speechBalloonImage}`} alt="pic">
+                    <Image src={`${imagePath}${speechBalloonImage}`} alt="pic">
                     </Image>
                 </animated.span>
                 }
