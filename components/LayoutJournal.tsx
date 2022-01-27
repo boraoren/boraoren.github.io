@@ -1,10 +1,17 @@
 import React, {FC, ReactNode} from 'react'
 import Head from 'next/head'
-import {Center, Container, Flex, SimpleGrid} from '@chakra-ui/react'
+import {Center, Container, Flex} from '@chakra-ui/react'
 import JournalTitle from "./atoms/journal/title";
 import {ArrowBackIcon} from "@chakra-ui/icons";
 import {useRouter} from 'next/router'
 import Footer from "./pages/footer";
+import "highlight.js/styles/docco.css";
+import gherkin from "highlight.js/lib/languages/gherkin";
+import javascript from "highlight.js/lib/languages/javascript";
+import hljs from "highlight.js";
+
+hljs.registerLanguage('gherkin', gherkin);
+hljs.registerLanguage('javascript', javascript);
 
 interface LayoutJournalProps {
     children?: ReactNode;
