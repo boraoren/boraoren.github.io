@@ -10,8 +10,8 @@ import rehypeHighlight from "rehype-highlight";
 
 
 export const ROOT = process.cwd();
-export const JOURNALS_PATH = path.join(process.cwd(), "content/journals");
-export const PORTFOLIOS_PATH = path.join(process.cwd(), "content/portfolios");
+export const JOURNALS_PATH = path.join(process.cwd(), "./data/content/journals");
+export const PORTFOLIOS_PATH = path.join(process.cwd(), "./data/content/portfolios");
 
 const getCompiledMDX = async (source: string) => {
     console.log("SOURCE", source);

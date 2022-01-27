@@ -9,7 +9,6 @@ interface CartoonTemplateProps {
 
 const CartoonTemplate: FC<CartoonTemplateProps> = ({cartoonBoxes, imagePath}) => {
 
-    cartoonBoxes = [{images: ["iam-super-excited-1-1.png","iam-super-excited-1-2.png","iam-super-excited-1-3.png"]}, {images: ["iam-super-excited-2-1.png","iam-super-excited-2-2.png"], speechBalloonImage: "iam-super-excited-2-3.png"}, {images: ["iam-super-excited-3-1.png"],speechBalloonImage: "iam-super-excited-3-2.png"}, {images: ["iam-super-excited-4-1.png","iam-super-excited-4-2.png","iam-super-excited-4-3.png"],speechBalloonImage: "iam-super-excited-4-4.png"}]
 
     return (
             <SimpleGrid color='white' direction={"column"} gap={5} >
