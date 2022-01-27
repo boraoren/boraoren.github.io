@@ -1,6 +1,6 @@
-import HomePageData from "../../../interfaces/HomePageData";
+import IndexPageDataModel from "../interfaces/IndexPageDataModel";
 
-export const homePageData: HomePageData =  {
+export const indexPageData: IndexPageDataModel =  {
     pageTitle: {
         "en-US": "Bora Oren's Showcase",
     },

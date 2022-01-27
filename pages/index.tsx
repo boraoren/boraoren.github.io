@@ -1,10 +1,9 @@
 import React from "react";
 import Layout from "../components/Layout";
-import "tailwindcss/tailwind.css";
 import {GetStaticProps} from "next";
-import {homePageData} from "../data/pages/home";
+import {indexPageData} from "../data/indexPageData";
 import packageJson from "../package.json";
-import HomePageData from "../interfaces/HomePageData";
+import IndexPageDataModel from "../interfaces/IndexPageDataModel";
 import JournalModel from "../interfaces/JournalModel";
 
 import {Box, Flex, Image, Link, Text, useColorMode,} from "@chakra-ui/react";
@@ -14,14 +13,14 @@ import {dateToDay} from "../utils/dateUtil";
 
 
 const IndexPage: React.FC<{
-    homePageData: HomePageData;
+    indexPageData: IndexPageDataModel;
     journals: JournalModel[];
-}> = ({homePageData, journals}) => {
+}> = ({indexPageData, journals}) => {
 
     const {colorMode, toggleColorMode} = useColorMode();
 
     return (
-        <Layout title={homePageData.pageTitle["en-US"]}>
+        <Layout title={indexPageData.pageTitle["en-US"]}>
 
             <Flex m={2} justifyContent={"space-between"}>
                 <Box>
@@ -36,7 +35,7 @@ const IndexPage: React.FC<{
                     </Text>
                 </Box>
             </Flex>
-            <Box bg="primary.900" m={1}  rounded={"xl"}>
+            <Box bg="primary.900" m={1} rounded={"xl"}>
                 <Flex align={"center"}>
                     <Flex direction={"column"} alignItems={"center"} flex={1}>
                         <Text
@@ -45,8 +44,8 @@ const IndexPage: React.FC<{
                             fontFamily={"primary"}
                             fontWeight={900}
                         >
-                            {homePageData.hi["en-US"]} {homePageData.Im["en-US"]}{" "}
-                            {homePageData.name["en-US"]}
+                            {indexPageData.hi["en-US"]} {indexPageData.Im["en-US"]}{" "}
+                            {indexPageData.name["en-US"]}
                         </Text>
                         <Text
                             fontSize={["md", "xl", "3xl", "5xl"]}
@@ -54,12 +53,12 @@ const IndexPage: React.FC<{
                             fontFamily={"secondary"}
                             fontWeight={900}
                         >
-                            {homePageData.title["en-US"]}
+                            {indexPageData.title["en-US"]}
                         </Text>
                     </Flex>
                     <Image
-                        src={`./images/${homePageData.image}`}
-                        alt="Bora Oren"
+                        src={`./images/${indexPageData.image}`}
+                        alt={indexPageData.name["en-US"]}
                         boxSize={"50%"}
                         mt={-50}
                     />
@@ -79,8 +78,9 @@ const IndexPage: React.FC<{
             {journals.map((journal, index) => {
                 return <JournalSummary key={index} day={dateToDay(journal.frontmatter.date)}>
                     <>
-                        <span dangerouslySetInnerHTML={{__html: journal.frontmatter.summary}} />
-                        &nbsp;<Link href={`journals/${journal.slug}`} style={{fontWeight: "bold"}}>{journal.frontmatter.readMore}</Link>
+                        <span dangerouslySetInnerHTML={{__html: journal.frontmatter.summary}}/>
+                        &nbsp;<Link href={`journals/${journal.slug}`}
+                                    style={{fontWeight: "bold"}}>{journal.frontmatter.readMore}</Link>
                     </>
                 </JournalSummary>
             })}
@@ -96,7 +96,7 @@ export const getStaticProps: GetStaticProps = async () => {
     try {
 
         const journals = getAllJournal();
-        return {props: {homePageData: homePageData, journals}};
+        return {props: {indexPageData, journals}};
     } catch (err) {
         return {props: {errors: err.message}};
     }

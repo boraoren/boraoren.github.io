@@ -1,4 +1,4 @@
-export default interface HomePageData{
+export default interface IndexPageDataModel {
     pageTitle: object;
     hi: object;
     Im: object;
