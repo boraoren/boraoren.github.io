@@ -1,5 +1,20 @@
 import {extendTheme} from '@chakra-ui/react';
 
+
+const h1 = {
+    fontSize: ['xl', '2xl', '4xl', '6xl'],
+    fontFamily: "primary",
+    fontWeight: 600,
+    color: "primary.900",
+    marginBottom: "20px"
+}
+
+const colors = {
+    secondary: {
+        400: "#4299E1",
+    }
+}
+
 export const themeOverride = {
     breakpoints: {
         sm: "320px",
@@ -14,12 +29,7 @@ export const themeOverride = {
         secondary: "Handlee",
     },
     textStyles: {
-        h1: {
-            fontSize: ['2xl', '4xl', '6xl'],
-            textTransform: "uppercase",
-            fontFamily: "primary",
-            fontWeight: 600,
-        },
+        h1,
     },
     fontSizes: {
         xs: "0.75rem",
@@ -48,7 +58,7 @@ export const themeOverride = {
             900: "#18181b",
         },
         secondary: {
-            400: "#4299E1",
+            400: colors.secondary["400"],
         },
     },
     config: {
@@ -58,11 +68,39 @@ export const themeOverride = {
     styles: {
         global: {
             '.mdx-prose': {
-                h1: {
-                    fontSize: '4xl',
-                    mb: '4',
-                    textTransform: "uppercase",
+                blockquote: {
+                    fontSize: "1.4em",
+                    width: "90%",
+                    margin: "50px auto",
+                    fontStyle: "italic",
+                    color: "#555555",
+                    padding: "1.2em 30px 1.2em 75px",
+                    borderLeft: `8px solid ${colors.secondary["400"]}`,
+                    lineHeight: "1.6",
+                    position: "relative",
+                    background: "#EDEDED",
                 },
+                "blockquote span": {
+                    display: "block",
+                    color: "#333333",
+                    fontStyle: "normal",
+                    fontWeight: "bold",
+                    marginTop: "1em",
+                },
+                "blockquote::before": {
+                    fontFamily: "Arial",
+                    content: `"\\201C"`,
+                    color: "black",
+                    fontSize: "4em",
+                    position: "absolute",
+                    left: "10px",
+                    top: "-10px",
+                },
+
+                "blockquote::after": {
+                    content: `""`,
+                },
+                h1,
                 h2: {
                     fontSize: '3xl',
                     mb: '4',
@@ -73,7 +111,7 @@ export const themeOverride = {
                 },
                 p: {
                     fontSize: ['md', 'lg', 'xl', '2xl'],
-                    ml:'4',
+                    ml: '4',
                     alignSelf: "center",
                     fontFamily: "primary",
                     fontWeight: 400,
@@ -84,7 +122,7 @@ export const themeOverride = {
                     margin: "revert",
                     padding: "revert",
                     fontSize: ['md', 'lg', 'xl', '2xl'],
-                    ml:'4',
+                    ml: '4',
                     alignSelf: "center",
                     fontFamily: "primary",
                     fontWeight: 400,
@@ -95,7 +133,7 @@ export const themeOverride = {
                     margin: "revert",
                     padding: "revert",
                     fontSize: ['md', 'lg', 'xl', '2xl'],
-                    ml:'4',
+                    ml: '4',
                     alignSelf: "center",
                     fontFamily: "primary",
                     fontWeight: 400,
