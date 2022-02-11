@@ -7,6 +7,7 @@ import {DateTime} from 'luxon';
 import remarkGfm from 'remark-gfm';
 import remarkToc from 'remark-toc'
 import rehypeHighlight from "rehype-highlight";
+import PortfolioModel from "../interfaces/JournalModel";
 
 
 export const ROOT = process.cwd();
@@ -92,7 +93,7 @@ export const getSinglePortfolio = async (slug: string) => {
 };
 
 export const getAllPortfolio = () => {
-    const journals: JournalModel[] = fs
+    const portfolios: PortfolioModel[] = fs
         .readdirSync(PORTFOLIOS_PATH)
         .filter((path) => /\.mdx?$/.test(path))
         .map((fileName) => {
@@ -103,10 +104,10 @@ export const getAllPortfolio = () => {
             return {
                 frontmatter: data,
                 slug: slug,
-            } as JournalModel;
+            } as PortfolioModel;
         });
 
-    return sortJournals(journals);
+    return sortJournals(portfolios);
 };
 
 export const getFileContent = (filename: string, folderPath) => {

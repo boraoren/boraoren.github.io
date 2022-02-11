@@ -12,3 +12,9 @@ export default interface JournalModel {
   slug: string;
   frontmatter: Frontmatter;
 }
+
+export default interface PortfolioModel {
+  code: string;
+  slug: string;
+  frontmatter: Frontmatter;
+}

@@ -4,8 +4,6 @@ import {getAllPortfolio, getSinglePortfolio} from "../../utils/mdx";
 import {Frontmatter} from "../../interfaces/PortfolioModel";
 import * as Components from "../../components";
 import LayoutPortfolio from "../../components/LayoutPortfolio";
-import {Heading, Spinner, Text} from "@chakra-ui/react";
-import {Table, Th} from "@chakra-ui/table";
 
 
 interface PortfolioProps {
