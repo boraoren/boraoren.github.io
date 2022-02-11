@@ -1,3 +1,21 @@
+# [1.8.0](https://github.com/boraoren/showcase/compare/v1.7.0...v1.8.0) (2022-02-11)
+
+
+### Bug Fixes
+
+* **softwaredeveloper:** change theme ([ec7fa3b](https://github.com/boraoren/showcase/commit/ec7fa3be8c7ae25c9e6c85f78789d65555ef5205))
+* **template:** remove test files ([bb293f8](https://github.com/boraoren/showcase/commit/bb293f86d737d56107d8498af5bf8c0cbdf4a92b))
+
+
+### Features
+
+* **blockquote:** implement ([20fe67e](https://github.com/boraoren/showcase/commit/20fe67e1e377a99dfea7ef884fba4c7481cfe8bf))
+* **components:** add ([a1c060d](https://github.com/boraoren/showcase/commit/a1c060dd1827429a527f2bdfe5ad088a4ad8a238))
+* **mdx:** implement ([75061ee](https://github.com/boraoren/showcase/commit/75061eecd850946fc922d358a3b7d3d5c7ccd33b))
+* **syntax highlight:** add ([58db4c2](https://github.com/boraoren/showcase/commit/58db4c2dd3328163031d42beaa2f497a87bfc7ea))
+* **template:** test ([4c9130e](https://github.com/boraoren/showcase/commit/4c9130e7f76938c69d9f136590397374e6333095))
+* **template:** test again ([001d992](https://github.com/boraoren/showcase/commit/001d992472b1d3101de62b1987b7e26a27e7d1d6))
+
 # [1.7.0](https://github.com/boraoren/showcase/compare/v1.6.0...v1.7.0) (2022-01-20)
 
 
