@@ -1,12 +1,12 @@
 import React, {FC} from "react";
 import Tilt from "react-parallax-tilt";
-import {Image, SimpleGrid} from "@chakra-ui/react";
+import {Box, Image, SimpleGrid} from "@chakra-ui/react";
 import {animated, useSpring} from "react-spring";
 
 export interface CartoonBoxProps {
-    imagePath?: string; // i-am-so-exited
-    images: string[]; // i-am-so-exited-1-1.png
-    speechBalloonImage?: string; // i-am-so-exited-1-2.png
+    imagePath?: string;
+    images: string[];
+    speechBalloonImage?: string;
     tiltEnable?: boolean;
     size?: number;
 }
@@ -74,7 +74,6 @@ const CartoonBox: FC<CartoonBoxProps> = ({
                 }}>
                 </Image>
                 }
-
 
                 {speechBalloonImage &&
                 //@ts-ignore

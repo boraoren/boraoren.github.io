@@ -7,7 +7,7 @@ interface JournalBoxDateProps{
 
 const JournalBoxDate : React.FC<JournalBoxDateProps> = ({value})  => {
   return (
-    <Square size="60px" bg="primary.900" color="white" fontWeight={700}  rounded={"xl"}>
+    <Square size="60px" bg="primary.900" color="primary.50" fontWeight={700}  rounded={"xl"}>
         {value}
     </Square>
   );

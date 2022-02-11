@@ -3,7 +3,7 @@ import {getMDXComponent} from "mdx-bundler/client";
 import {getAllJournal, getSingleJournal} from "../../utils/mdx";
 import {Frontmatter} from "../../interfaces/JournalModel";
 import LayoutJournal from "../../components/LayoutJournal";
-import CartoonTemplate from "../../components/templates/cartoon";
+import * as Components from "../../components";
 
 interface JournalProps {
     code: any;
@@ -12,8 +12,10 @@ interface JournalProps {
 
 const Journal: FC<JournalProps> = ({code, frontmatter}) => {
     const Component = React.useMemo(() => getMDXComponent(code), [code]);
+
     const MDXWrapper = (props) => <div className='mdx-prose' {...props} ><Component components={{
-        CartoonTemplate,
+        // @ts-ignore
+        Components
     }}/></div>
 
     return (

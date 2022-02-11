@@ -7,7 +7,6 @@ const Footer = () => {
             <hr/>
             <span/>
             <br/>
-            <Text>FOOTER</Text><Badge colorScheme="green">TODO</Badge>
         </footer>
     )
 }

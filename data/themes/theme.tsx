@@ -6,7 +6,8 @@ const h1 = {
     fontFamily: "primary",
     fontWeight: 600,
     color: "primary.900",
-    marginBottom: "20px"
+    marginBottom: "10px",
+    marginTop: "10px",
 }
 
 const colors = {
@@ -32,6 +33,7 @@ export const themeOverride = {
         h1,
     },
     fontSizes: {
+        "2xs": "0.50rem",
         xs: "0.75rem",
         sm: "0.875rem",
         md: "1rem",
@@ -111,12 +113,11 @@ export const themeOverride = {
                 },
                 p: {
                     fontSize: ['md', 'lg', 'xl', '2xl'],
-                    ml: '4',
+                    m: 4,
                     alignSelf: "center",
                     fontFamily: "primary",
                     fontWeight: 400,
-                    mt: -2,
-                    mr: '4'
+
                 },
                 ul: {
                     margin: "revert",
@@ -139,6 +140,15 @@ export const themeOverride = {
                     fontWeight: 400,
                     mt: -2,
                     mr: '4'
+                },
+                a: {
+                    color: "secondary.400",
+                    fontWeight: "bold",
+                },
+                code: {
+                    mb: 5,
+                    rounded: 10,
+                    boxShadow: "0.5px 0.5px 2px grey inset",
                 }
             },
         }

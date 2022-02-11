@@ -73,7 +73,7 @@ const IndexPage: React.FC<{
                 fontWeight={"bold"}
                 fontSize={["md", "lg", "xl", "2xl"]}
             >
-                JANUARY 2022
+                FEBRUARY 2022
             </Text>
             {journals.map((journal, index) => {
                 return <JournalSummary key={index} day={dateToDay(journal.frontmatter.date)}>

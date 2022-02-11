@@ -5,7 +5,7 @@ import JournalTitle from "./atoms/journal/title";
 import {ArrowBackIcon} from "@chakra-ui/icons";
 import {useRouter} from 'next/router'
 import Footer from "./pages/footer";
-import "highlight.js/styles/docco.css";
+import "highlight.js/styles/a11y-light.css";
 import gherkin from "highlight.js/lib/languages/gherkin";
 import javascript from "highlight.js/lib/languages/javascript";
 import hljs from "highlight.js";
