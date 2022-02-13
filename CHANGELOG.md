@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/boraoren/boraoren.github.io/compare/v1.8.0...v1.8.1) (2022-02-13)
+
+
+### Bug Fixes
+
+* **journals/i-am-super-excited:** what do I need section ([d6140b6](https://github.com/boraoren/boraoren.github.io/commit/d6140b6a0cb2811c95ad0ebc23f94b04ad348d8f))
+
 # [1.8.0](https://github.com/boraoren/showcase/compare/v1.7.0...v1.8.0) (2022-02-11)
 
 
