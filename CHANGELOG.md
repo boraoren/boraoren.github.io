@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/boraoren/boraoren.github.io/compare/v1.8.1...v1.9.0) (2022-02-15)
+
+
+### Features
+
+* **google analytics 4:** add ([ff3aba7](https://github.com/boraoren/boraoren.github.io/commit/ff3aba7318db5e41d88803497877e29b80e6d5b9))
+
 ## [1.8.1](https://github.com/boraoren/boraoren.github.io/compare/v1.8.0...v1.8.1) (2022-02-13)
 
 
