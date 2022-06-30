@@ -10,6 +10,7 @@ import {Box, Flex, Image, Link, Text, useColorMode,} from "@chakra-ui/react";
 import JournalSummary from "../components/molecules/journal/summary";
 import {getAllJournal} from "../utils/mdx";
 import {dateToDay} from "../utils/dateUtil";
+import {journalUtilSortByDate, SortEnum} from "../utils/journalUtil";
 
 
 const IndexPage: React.FC<{
@@ -96,6 +97,7 @@ export const getStaticProps: GetStaticProps = async () => {
     try {
 
         const journals = getAllJournal();
+        journalUtilSortByDate(journals, SortEnum.DESC);
         return {props: {indexPageData, journals}};
     } catch (err) {
         return {props: {errors: err.message}};
