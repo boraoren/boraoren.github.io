@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Layout from "../components/Layout";
 import {GetStaticProps} from "next";
 import {indexPageData} from "../data/indexPageData";
@@ -6,19 +6,44 @@ import packageJson from "../package.json";
 import IndexPageDataModel from "../interfaces/IndexPageDataModel";
 import JournalModel from "../interfaces/JournalModel";
 
-import {Box, Flex, Image, Link, Text, useColorMode,} from "@chakra-ui/react";
+import {Box, Button, Flex, Image, Link, Text, useColorMode,} from "@chakra-ui/react";
 import JournalSummary from "../components/molecules/journal/summary";
 import {getAllJournal} from "../utils/mdx";
-import {dateToDay} from "../utils/dateUtil";
-import {journalUtilSortByDate, SortEnum} from "../utils/journalUtil";
+import {dateToDay, monthNumberToMonthName} from "../utils/dateUtil";
+import {useRouter} from 'next/router'
 
 
 const IndexPage: React.FC<{
     indexPageData: IndexPageDataModel;
     journals: JournalModel[];
-}> = ({indexPageData, journals}) => {
+    years: number[];
+    months: number[];
+    monthlyTotalJournalInformation: any;
+}> = ({
+          indexPageData,
+          journals,
+          years,
+          months,
+          monthlyTotalJournalInformation
+      }) => {
 
     const {colorMode, toggleColorMode} = useColorMode();
+    const [selectedYear, setSelectedYear] = useState(years[0]);
+    const [selectedMonth, setSelectedMonth] = useState(months[0]);
+    const [filteredJournals, setFilteredJournals] = useState([] as JournalModel[]);
+    const [mouseOverJournalState, setMouseOverJournalState] = useState("" as string);
+    const router = useRouter()
+
+    useEffect(() => {
+        const filteredJournals = journals.filter((journal) => {
+            const date = new Date(journal.frontmatter.date);
+            const year = date.getFullYear();
+            //const month = date.getMonth();
+            //return year === selectedYear && month === selectedMonth;
+            return year === selectedYear;
+        })
+        setFilteredJournals(filteredJournals);
+    }, [journals, selectedMonth, selectedYear])
 
     return (
         <Layout title={indexPageData.pageTitle["en-US"]}>
@@ -68,37 +93,84 @@ const IndexPage: React.FC<{
                  Toggle {colorMode === "light" ? "Dark" : "Light"}
                  </Button> **/}
             </Box>
-            <Text
-                mt={9}
-                mb={9}
-                fontWeight={"bold"}
-                fontSize={["md", "lg", "xl", "2xl"]}
-            >
-                FEBRUARY 2022
-            </Text>
-            {journals.map((journal, index) => {
-                return <JournalSummary key={index} day={dateToDay(journal.frontmatter.date)}>
-                    <>
-                        <span dangerouslySetInnerHTML={{__html: journal.frontmatter.summary}}/>
-                        &nbsp;<Link href={`journals/${journal.slug}`}
-                                    style={{fontWeight: "bold"}}>{journal.frontmatter.readMore}</Link>
-                    </>
-                </JournalSummary>
+
+            {years.length > 1 && <Box>
+                <Flex gap={5}>
+                    <Flex gap={2}>
+                        {years.map((year, key) => {
+                            const isSelectedYear = selectedYear === year;
+                            return <Button
+                                key={key}
+                                ml={5}
+                                colorScheme="blackAlpha"
+                                variant={isSelectedYear ? "solid" : "link"}
+                                fontWeight={"bold"}
+                                fontSize={["md", "lg", "xl", "2xl"]}
+                                onClick={() => setSelectedYear(year)}
+                            >
+                                {year}
+                            </Button>
+                        })}
+                    </Flex>
+                    {/*<Flex gap={2}>
+                        {months.map((month) => {
+                            const isSelectedMonth = selectedMonth === month;
+                            return monthlyTotalJournalInformation[`${selectedYear}${month}`] && <Button
+                                colorScheme="blackAlpha"
+                                variant={isSelectedMonth ? "solid" : "link"}
+                                fontWeight={"bold"}
+                                fontSize={["md", "lg", "xl", "2xl"]}
+                                onClick={() => setSelectedMonth(month)}
+                            >
+                                {monthNumberToMonthName(month)} ({monthlyTotalJournalInformation[`${selectedYear}${month}`].total})
+                            </Button>
+                        })}
+                    </Flex>*/}
+                </Flex>
+            </Box>}
+
+            {filteredJournals.map((journal, key) => {
+                const date = dateToDay(journal.frontmatter.date);
+                return <Box key={key}
+                            href={`journals/${journal.slug}`}
+                            style={{fontWeight: "bold", cursor: "pointer"}}
+                            onMouseOver={() => setMouseOverJournalState(journal.frontmatter.date)}
+                            onMouseOut={() => setMouseOverJournalState("")}
+                            onFocus={() => setMouseOverJournalState(journal.frontmatter.date)}
+                            onClick={() => router.push(`journals/${journal.slug}`)}>
+                    <JournalSummary
+                        day={date.day}
+                        state={mouseOverJournalState === journal.frontmatter.date ? "over" : "default"}
+                        month={monthNumberToMonthName(date.month)}>
+                        <>
+                            <span dangerouslySetInnerHTML={{__html: journal.frontmatter.summary}}/>
+                            &nbsp;<Link href={`journals/${journal.slug}`}
+                                        style={{fontWeight: "bold"}}>{journal.frontmatter.readMore}</Link>
+                        </>
+                    </JournalSummary>
+                </Box>
             })}
         </Layout>
     );
 };
 
 /*
-<div className="relative h-screen bg-black bg-opacity-75 w-1/2" />
+<div className="relative h-screen bg-black bg-opacity-75 w-1/2"/>
 */
 
 export const getStaticProps: GetStaticProps = async () => {
     try {
+        const allJournals = await getAllJournal();
 
-        const journals = getAllJournal();
-        journalUtilSortByDate(journals, SortEnum.DESC);
-        return {props: {indexPageData, journals}};
+        return {
+            props: {
+                indexPageData,
+                journals: allJournals.journals,
+                years: allJournals.years,
+                months: allJournals.months,
+                monthlyTotalJournalInformation: allJournals.monthlyTotalJournalInformation,
+            }
+        };
     } catch (err) {
         return {props: {errors: err.message}};
     }

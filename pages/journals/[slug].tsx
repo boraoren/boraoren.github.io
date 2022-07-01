@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import {getMDXComponent} from "mdx-bundler/client";
-import {getAllJournal, getSingleJournal} from "../../utils/mdx";
+import {getAllJournal, getSingleJournal, getStaticPathsForJournal} from "../../utils/mdx";
 import {Frontmatter} from "../../interfaces/JournalModel";
 import LayoutJournal from "../../components/LayoutJournal";
 import * as Components from "../../components";
@@ -33,7 +33,7 @@ export const getStaticProps = async ({params}) => {
 };
 
 export const getStaticPaths = async () => {
-    const paths = getAllJournal().map(({slug}) => ({params: {slug}}));
+    const paths = getStaticPathsForJournal();
     return {
         paths,
         fallback: false,

@@ -8,6 +8,8 @@ import remarkGfm from 'remark-gfm';
 import remarkToc from 'remark-toc'
 import rehypeHighlight from "rehype-highlight";
 import PortfolioModel from "../interfaces/JournalModel";
+import {journalUtilGetJournalsByYearsWithMonths} from "./journalUtil";
+import {monthNumberToMonthName} from "./dateUtil";
 
 
 export const ROOT = process.cwd();
@@ -33,7 +35,7 @@ const getCompiledMDX = async (source: string) => {
         );
     }
     // Add your remark and rehype plugins here
-    const remarkPlugins = [remarkGfm, [remarkToc,{tight: true, ordered: true}]];
+    const remarkPlugins = [remarkGfm, [remarkToc, {tight: true, ordered: true}]];
     const rehypePlugins = [rehypeHighlight];
 
     return await bundleMDX({
@@ -64,7 +66,63 @@ export const getSingleJournal = async (slug: string) => {
     };
 };
 
-export const getAllJournal = () => {
+export const getAllJournal = async () => {
+    const years = new Set();
+    const months = new Set();
+    const monthlyTotalJournalInformation = {};
+
+    const journals: JournalModel[] = fs
+        .readdirSync(JOURNALS_PATH)
+        .filter((path) => /\.mdx?$/.test(path))
+        .map((fileName) => {
+            const source = getFileContent(fileName, JOURNALS_PATH);
+            const slug = fileName.replace(/\.mdx?$/, "");
+            const {data} = matter(source);
+
+            const date = new Date(data.date);
+            const month = date.getMonth();
+            const year = date.getFullYear();
+            months.add(month);
+            years.add(year);
+
+            let monthlyTotalJournal = monthlyTotalJournalInformation[`${year}${month}`];
+
+            if (monthlyTotalJournal === undefined) {
+                monthlyTotalJournalInformation[`${year}${month}`]={year, month, total: 1};
+            } else {
+                let total = monthlyTotalJournalInformation[`${year}${month}`].total;
+                total = total + 1;
+                monthlyTotalJournalInformation[`${year}${month}`].total=total;
+
+            }
+
+            return {
+                frontmatter: data,
+                slug: slug,
+            } as JournalModel;
+        });
+
+    return {
+        journals: sortJournals(journals),
+        years: Array.from(years),
+        months: Array.from(months).sort((a: number, b: number) => {
+            return b - a;
+        }), monthlyTotalJournalInformation
+    };
+};
+
+export const getSinglePortfolio = async (slug: string) => {
+    const source = getFileContent(`${slug}.mdx`, PORTFOLIOS_PATH);
+    const {code, frontmatter} = await getCompiledMDX(source);
+
+    return {
+        frontmatter,
+        code,
+    };
+};
+
+
+export const getStaticPathsForJournal = () => {
     const journals: JournalModel[] = fs
         .readdirSync(JOURNALS_PATH)
         .filter((path) => /\.mdx?$/.test(path))
@@ -79,17 +137,7 @@ export const getAllJournal = () => {
             } as JournalModel;
         });
 
-    return sortJournals(journals);
-};
-
-export const getSinglePortfolio = async (slug: string) => {
-    const source = getFileContent(`${slug}.mdx`, PORTFOLIOS_PATH);
-    const {code, frontmatter} = await getCompiledMDX(source);
-
-    return {
-        frontmatter,
-        code,
-    };
+    return sortJournals(journals).map(({slug}) => ({params: {slug}}));;
 };
 
 export const getAllPortfolio = () => {
@@ -107,7 +155,7 @@ export const getAllPortfolio = () => {
             } as PortfolioModel;
         });
 
-    return sortJournals(portfolios);
+    return portfolios;
 };
 
 export const getFileContent = (filename: string, folderPath) => {
@@ -117,8 +165,8 @@ export const getFileContent = (filename: string, folderPath) => {
 
 const sortJournals = (journals: JournalModel[]) => {
     return journals.sort((a, b) => {
-        const beforeDate = DateTime.fromFormat(a.frontmatter.date, 'dd/MM/yyyy')
-        const afterDate = DateTime.fromFormat(b.frontmatter.date, 'dd/MM/yyyy')
+        const beforeDate = DateTime.fromFormat(a.frontmatter.date, 'yyyy/MM/dd')
+        const afterDate = DateTime.fromFormat(b.frontmatter.date, 'yyyy/MM/dd')
         return afterDate - beforeDate
     })
 }
