@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next",
+    "dev-local": "source $HOME/.nvm/nvm.sh; nvm use 15.10.0 && next",
     "build": "next build && next export",
+    "build-local": "source $HOME/.nvm/nvm.sh; nvm use 15.10.0 && next build && next export",
     "start": "next start",
     "export": "next export",
     "type-check": "tsc"
@@ -16,7 +18,7 @@
     "@emotion/styled": "^11.6.0",
     "@fontsource/caveat": "^4.5.0",
     "@fontsource/handlee": "^4.5.0",
-    "@fontsource/open-sans": "^4.5.2",
+    "@fontsource/open-sans": "^4.5.10",
     "@fontsource/roboto": "^4.5.1",
     "esbuild": "^0.14.11",
     "framer-motion": "^5.5.5",
@@ -24,7 +26,7 @@
     "highlight.js": "^11.4.0",
     "luxon": "^2.3.0",
     "mdx-bundler": "^8.0.1",
-    "next": "11.1.0",
+    "next": "12.2.0",
     "next-compose-plugins": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
