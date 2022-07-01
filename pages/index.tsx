@@ -137,7 +137,7 @@ const IndexPage: React.FC<{
                             onMouseOver={() => setMouseOverJournalState(journal.frontmatter.date)}
                             onMouseOut={() => setMouseOverJournalState("")}
                             onFocus={() => setMouseOverJournalState(journal.frontmatter.date)}
-                            onClick={() => router.push(`journals/${journal.slug}`)}>
+                            onClick={(e) => {e.preventDefault(); router.push(`journals/${journal.slug}`)}}>
                     <JournalSummary
                         day={date.day}
                         state={mouseOverJournalState === journal.frontmatter.date ? "over" : "default"}
