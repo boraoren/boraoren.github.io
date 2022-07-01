@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/boraoren/boraoren.github.io/compare/v1.9.0...v1.10.0) (2022-07-01)
+
+
+### Features
+
+* **journal:** sort by date asc desc ([9aafc71](https://github.com/boraoren/boraoren.github.io/commit/9aafc7185132b7880c451195302beb5daa427456))
+
 # [1.9.0](https://github.com/boraoren/boraoren.github.io/compare/v1.8.1...v1.9.0) (2022-02-15)
 
 
