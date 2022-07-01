@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/boraoren/boraoren.github.io/compare/v1.10.0...v1.10.1) (2022-07-01)
+
+
+### Bug Fixes
+
+* **journal:** click to redirect ([b75e021](https://github.com/boraoren/boraoren.github.io/commit/b75e021eaf28d098808e07cb7741f93a456c83ab))
+
 # [1.10.0](https://github.com/boraoren/boraoren.github.io/compare/v1.9.0...v1.10.0) (2022-07-01)
 
 
