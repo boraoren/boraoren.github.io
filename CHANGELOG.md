@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/boraoren/boraoren.github.io/compare/v1.10.1...v1.10.2) (2022-07-07)
+
+
+### Bug Fixes
+
+* **mobile:** view ([e44d451](https://github.com/boraoren/boraoren.github.io/commit/e44d451e47baf91273d3d30dade52a220631b5df))
+
 ## [1.10.1](https://github.com/boraoren/boraoren.github.io/compare/v1.10.0...v1.10.1) (2022-07-01)
 
 
