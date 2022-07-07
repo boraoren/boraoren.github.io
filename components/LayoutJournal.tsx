@@ -46,7 +46,9 @@ const LayoutJournal: FC<LayoutJournalProps> = ({children, title}) => {
                     {title}
                 </JournalTitle>
             </Flex>
-            <Center mt={50}>
+            <Center mt={50}
+                    data-testid={"contentTestId"}
+                    display={"initial"}>
                 {children}
             </Center>
             <br/>
