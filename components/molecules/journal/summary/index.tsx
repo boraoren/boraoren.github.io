@@ -18,8 +18,7 @@ const JournalSummary: React.FC<JournalSummaryProps> = ({
 
     return (
         <Container
-            maxWidth={"150ch"}
-            mt={7}
+            maxWidth={"106ch"}
             p={5}
             bg={state === "over" && "primary.900"}
             color={state === "over" && "primary.50"}

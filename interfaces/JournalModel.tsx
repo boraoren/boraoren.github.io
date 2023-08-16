@@ -4,6 +4,7 @@ export interface Frontmatter {
   summary: string;
   description: string;
   date: string;
+  time: number;
   readMore: string;
 }
 

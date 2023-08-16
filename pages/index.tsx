@@ -61,7 +61,10 @@ const IndexPage: React.FC<{
                     </Text>
                 </Box>
             </Flex>
-            <Box bg="primary.900" m={1} rounded={"xl"}>
+            <Box bg="primary.900" m={1} rounded={"xl"}
+                 position="sticky"
+                 top={-235}
+            >
                 <Flex align={"center"}>
                     <Flex direction={"column"} alignItems={"center"} flex={1}>
                         <Text
@@ -93,19 +96,31 @@ const IndexPage: React.FC<{
                  Toggle {colorMode === "light" ? "Dark" : "Light"}
                  </Button> **/}
             </Box>
-
-            {years.length > 1 && <Box>
-                <Flex gap={5}>
-                    <Flex gap={2}>
+            {years.length > 1 &&
+                <Flex
+                    position="sticky"
+                    top={1}
+                    backgroundColor="black"
+                    mt={-5}
+                    ml={1}
+                    mr={1}
+                    p={2}
+                    borderRadius={10}>
+                    <Text color="white"
+                          alignSelf="center"
+                          fontWeight={"bold"}
+                          fontSize={["md", "lg", "xl", "2xl"]}
+                    >Journals</Text>
+                    <Flex gap={1}>
                         {years.map((year, key) => {
                             const isSelectedYear = selectedYear === year;
                             return <Button
                                 key={key}
+                                colorScheme="blue"
                                 ml={5}
-                                colorScheme="blackAlpha"
                                 variant={isSelectedYear ? "solid" : "link"}
                                 fontWeight={"bold"}
-                                fontSize={["md", "lg", "xl", "2xl"]}
+                                fontSize={["md", "md", "xl", "2xl"]}
                                 onClick={() => setSelectedYear(year)}
                             >
                                 {year}
@@ -126,18 +141,21 @@ const IndexPage: React.FC<{
                             </Button>
                         })}
                     </Flex>*/}
-                </Flex>
-            </Box>}
+                </Flex>}
 
             {filteredJournals.map((journal, key) => {
                 const date = dateToDay(journal.frontmatter.date);
                 return <Box key={key}
+                            mt={5}
                             href={`journals/${journal.slug}`}
                             style={{fontWeight: "bold", cursor: "pointer"}}
                             onMouseOver={() => setMouseOverJournalState(journal.frontmatter.date)}
                             onMouseOut={() => setMouseOverJournalState("")}
                             onFocus={() => setMouseOverJournalState(journal.frontmatter.date)}
-                            onClick={(e) => {e.preventDefault(); router.push(`journals/${journal.slug}`)}}>
+                            onClick={(e) => {
+                                e.preventDefault();
+                                router.push(`journals/${journal.slug}`)
+                            }}>
                     <JournalSummary
                         day={date.day}
                         state={mouseOverJournalState === journal.frontmatter.date ? "over" : "default"}

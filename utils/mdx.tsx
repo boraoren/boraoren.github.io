@@ -79,6 +79,7 @@ export const getAllJournal = async () => {
             const slug = fileName.replace(/\.mdx?$/, "");
             const {data} = matter(source);
 
+            const time = data.time;
             const date = new Date(data.date);
             const month = date.getMonth();
             const year = date.getFullYear();
@@ -104,7 +105,11 @@ export const getAllJournal = async () => {
 
     return {
         journals: sortJournals(journals),
-        years: Array.from(years),
+        years: Array
+            .from(years)
+            .sort((after:number,before:number)=> {
+            return before-after
+        }),
         months: Array.from(months).sort((a: number, b: number) => {
             return b - a;
         }), monthlyTotalJournalInformation
@@ -137,7 +142,8 @@ export const getStaticPathsForJournal = () => {
             } as JournalModel;
         });
 
-    return sortJournals(journals).map(({slug}) => ({params: {slug}}));;
+    return sortJournals(journals)
+        .map(({slug}) => ({params: {slug}}));
 };
 
 export const getAllPortfolio = () => {
