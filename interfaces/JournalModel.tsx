@@ -6,6 +6,9 @@ export interface Frontmatter {
   date: string;
   time: number;
   readMore: string;
+  tags?: string[];
+  tag?: string;
+  type: "JOURNAL" | "SIDE_PROJECT"
 }
 
 export default interface JournalModel {

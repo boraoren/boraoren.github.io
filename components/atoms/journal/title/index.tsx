@@ -1,10 +1,11 @@
 import React from "react";
 import {Text} from "@chakra-ui/react";
 
-const JournalTitle= ({children}) => {
+const JournalTitle = ({children}) => {
 
     return (
-        <Text textStyle='h1' >
+        <Text textStyle='h1'
+              date-testid="atoms-journal-title">
             {children}
         </Text>
     );

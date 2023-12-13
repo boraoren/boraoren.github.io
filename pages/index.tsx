@@ -6,7 +6,7 @@ import packageJson from "../package.json";
 import IndexPageDataModel from "../interfaces/IndexPageDataModel";
 import JournalModel from "../interfaces/JournalModel";
 
-import {Box, Button, Flex, Image, Link, Text, useColorMode,} from "@chakra-ui/react";
+import {Box, Button, Center, Flex, Heading, Image, Link, Text, useColorMode,} from "@chakra-ui/react";
 import JournalSummary from "../components/molecules/journal/summary";
 import {getAllJournal} from "../utils/mdx";
 import {dateToDay, monthNumberToMonthName} from "../utils/dateUtil";
@@ -49,6 +49,27 @@ const IndexPage: React.FC<{
         <Layout title={indexPageData.pageTitle["en-US"]}>
 
             <Flex m={2} justifyContent={"space-between"}>
+                <Flex gap={3} mt={1}>
+                    <Text
+                        fontSize={["sm", "md", "lg", "lg"]}
+                        fontWeight="bold"
+                        mt={1}
+                    >
+                        🚀 Side Projects:
+                    </Text>
+                    <Link
+                        href="side-projects/project-management"
+                        bg="primary.900"
+                        color="white"
+                        p={1}
+                        borderRadius={5}
+                        fontSize={["sm", "md", "lg", "lg"]}
+                        right={"0px"}
+                        top={"-10px"}
+                    >
+                        Project Management
+                    </Link>
+                </Flex>
                 <Box>
                     <Text
                         fontSize={["md", "lg", "xl", "2xl"]}
@@ -61,10 +82,8 @@ const IndexPage: React.FC<{
                     </Text>
                 </Box>
             </Flex>
-            <Box bg="primary.900" m={1} rounded={"xl"}
-                 position="sticky"
-                 top={-235}
-            >
+
+            <Box bg="primary.900" m={1} rounded={"xl"}>
                 <Flex align={"center"}>
                     <Flex direction={"column"} alignItems={"center"} flex={1}>
                         <Text
@@ -75,6 +94,7 @@ const IndexPage: React.FC<{
                         >
                             {indexPageData.hi["en-US"]} {indexPageData.Im["en-US"]}{" "}
                             {indexPageData.name["en-US"]}
+
                         </Text>
                         <Text
                             fontSize={["md", "xl", "3xl", "5xl"]}
@@ -99,18 +119,16 @@ const IndexPage: React.FC<{
             {years.length > 1 &&
                 <Flex
                     position="sticky"
-                    top={1}
-                    backgroundColor="black"
-                    mt={-5}
-                    ml={1}
+                    mt={-59}
+                    ml={-2}
                     mr={1}
                     p={2}
                     borderRadius={10}>
-                    <Text color="white"
+                    {/*<Text color="primary.900"
                           alignSelf="center"
                           fontWeight={"bold"}
                           fontSize={["md", "lg", "xl", "2xl"]}
-                    >Journals</Text>
+                    >Journals</Text>*/}
                     <Flex gap={1}>
                         {years.map((year, key) => {
                             const isSelectedYear = selectedYear === year;
@@ -146,7 +164,8 @@ const IndexPage: React.FC<{
             {filteredJournals.map((journal, key) => {
                 const date = dateToDay(journal.frontmatter.date);
                 return <Box key={key}
-                            mt={5}
+                            mt={2}
+                            ml={1}
                             href={`journals/${journal.slug}`}
                             style={{fontWeight: "bold", cursor: "pointer"}}
                             onMouseOver={() => setMouseOverJournalState(journal.frontmatter.date)}
@@ -161,6 +180,7 @@ const IndexPage: React.FC<{
                         state={mouseOverJournalState === journal.frontmatter.date ? "over" : "default"}
                         month={monthNumberToMonthName(date.month)}>
                         <>
+                            <Heading as="h1" size="lg">{journal.frontmatter.title}</Heading>
                             <span dangerouslySetInnerHTML={{__html: journal.frontmatter.summary}}/>
                             &nbsp;<Link href={`journals/${journal.slug}`}
                                         style={{fontWeight: "bold"}}>{journal.frontmatter.readMore}</Link>

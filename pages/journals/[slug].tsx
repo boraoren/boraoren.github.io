@@ -11,6 +11,7 @@ interface JournalProps {
 }
 
 const Journal: FC<JournalProps> = ({code, frontmatter}) => {
+    
     const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
     const MDXWrapper = (props) => <div className='mdx-prose' {...props} ><Component components={{

@@ -143,7 +143,7 @@ export const getStaticPathsForJournal = () => {
         });
 
     return sortJournals(journals)
-        .map(({slug}) => ({params: {slug}}));
+        .map(({slug,frontmatter}) => ({params: {slug, frontmatter}}));
 };
 
 export const getAllPortfolio = () => {
