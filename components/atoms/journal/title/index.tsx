@@ -5,6 +5,7 @@ const JournalTitle = ({children}) => {
 
     return (
         <Text textStyle='h1'
+              lineHeight={1}
               date-testid="atoms-journal-title">
             {children}
         </Text>

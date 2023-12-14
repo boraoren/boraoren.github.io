@@ -40,7 +40,6 @@ const LayoutJournal: FC<LayoutJournalProps> = ({children, title}) => {
                                    cursor: "pointer",
                                    color: "black"
                                }}
-
                                onClick={() => router.back()}/>
                 <JournalTitle>
                     {title}

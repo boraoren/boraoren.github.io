@@ -58,7 +58,7 @@ const IndexPage: React.FC<{
                         🚀 Side Projects:
                     </Text>
                     <Link
-                        href="side-projects/project-management"
+                        href="side-projects/product-management"
                         bg="primary.900"
                         color="white"
                         p={1}
@@ -67,7 +67,7 @@ const IndexPage: React.FC<{
                         right={"0px"}
                         top={"-10px"}
                     >
-                        Project Management
+                        Product Management
                     </Link>
                 </Flex>
                 <Box>

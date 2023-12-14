@@ -9,7 +9,7 @@ const TimeLine = () => {
             media: {
                 name: 'project management',
                 source: {
-                    url: '/images/side-projects/project-management.jpeg',
+                    url: '/images/side-projects/product-management.jpeg',
                     // url: "/dunkirk.mp4"
                 },
                 type: 'IMAGE',
