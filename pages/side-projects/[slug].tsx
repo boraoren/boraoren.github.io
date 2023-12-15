@@ -1,4 +1,13 @@
-import {Box, Flex, Heading} from "@chakra-ui/react";
+import {
+    Accordion,
+    AccordionButton,
+    AccordionIcon,
+    AccordionItem,
+    AccordionPanel,
+    Box,
+    Flex,
+    Heading
+} from "@chakra-ui/react";
 
 import React from "react";
 import LayoutSideProjects from "../../components/LayoutSideProjects";
@@ -28,30 +37,40 @@ const SideProjectsProjectManagement = (props: any) => {
                             <Heading as="h1" size="xl" pl={5} position="sticky" top={0} width="100%"
                                      bg="white" zIndex={999}>{year}</Heading>
 
-                            <Flex direction="column" ml={0}>
-                                {filteredJournals.map((journal, key) => {
+                            <Accordion allowToggle>
+                                <Flex direction="column" ml={0}>
+                                    {filteredJournals.map((journal, key) => {
 
-                                    const date = dateToDay(journal.frontmatter.date);
+                                        const date = dateToDay(journal.frontmatter.date);
 
-                                    const Component = getMDXComponent(journal.code);
-                                    const MDXWrapper = (props) => <div className='mdx-prose' {...props} ><Component
-                                        components={{
-                                            // @ts-ignore
-                                            Components
-                                        }}/></div>
+                                        const Component = getMDXComponent(journal.code);
+                                        const MDXWrapper = (props) => <div className='mdx-prose' {...props} ><Component
+                                            components={{
+                                                // @ts-ignore
+                                                Components
+                                            }}/></div>
 
-                                    return (
-                                        <Box bg="white" width="100%">
-                                            <SideProjectSummary day={date.day}
-                                                                month={monthNumberToMonthName(date.month)}>
-                                                <b>{journal.frontmatter.title}</b>
-                                            </SideProjectSummary>
-                                            <MDXWrapper/>
-                                        </Box>
-                                    )
+                                        return (
+                                            <AccordionItem>
+                                                <AccordionButton
+                                                    position="sticky" top={8}
+                                                    textAlign="left"
+                                                    borderRadius={15}>
+                                                    <SideProjectSummary day={date.day}
+                                                                        month={monthNumberToMonthName(date.month)}>
+                                                        <b>{journal.frontmatter.title}</b>
+                                                    </SideProjectSummary>
+                                                    <AccordionIcon/>
+                                                </AccordionButton>
+                                                <AccordionPanel pb={4}>
+                                                    <MDXWrapper/>
+                                                </AccordionPanel>
+                                            </AccordionItem>
+                                        )
 
-                                })}
-                            </Flex>
+                                    })}
+                                </Flex>
+                            </Accordion>
                         </>
                     )
                 })}

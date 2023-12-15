@@ -20,9 +20,6 @@ const SideProjectSummary: React.FC<SideProjectSummaryProps> = ({
 
     return (
         <Container
-            borderBottomStyle="solid"
-            borderBottomColor="primary.400"
-            borderBottomWidth={1}
             position="sticky"
             top={10}
             maxWidth={"106ch"}
