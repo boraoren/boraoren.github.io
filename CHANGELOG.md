@@ -1,3 +1,42 @@
+# [1.11.0](https://github.com/boraoren/boraoren.github.io/compare/v1.10.2...v1.11.0) (2023-12-15)
+
+
+### Bug Fixes
+
+* **header:** side projects layout ([2190ec2](https://github.com/boraoren/boraoren.github.io/commit/2190ec29612d956204013c67f3cae49ca6903cfb))
+* **journal:** add read more... ([14a4beb](https://github.com/boraoren/boraoren.github.io/commit/14a4beb681f6bcf735dc741e2d2b9066596fd24b))
+* **linting:** issues ([db696bf](https://github.com/boraoren/boraoren.github.io/commit/db696bfe68f0a24fddeb0af3c7024bc0d565d278))
+* **node:** version update ([ae67d74](https://github.com/boraoren/boraoren.github.io/commit/ae67d741f570692f9043d9ab8f4b51769d61f6d0))
+* **npm:** change version ([0a97dbf](https://github.com/boraoren/boraoren.github.io/commit/0a97dbf1e79fdd71b7ad14a981e73c2999964a0b))
+* **npm:** version ([dfb6544](https://github.com/boraoren/boraoren.github.io/commit/dfb6544a6d885a09f6a5de328e0a8f892dc6bd95))
+* **side-proejects/product-manager:** project create ([5c521cf](https://github.com/boraoren/boraoren.github.io/commit/5c521cfae8006f9c944d718a96cce3d7ed758b53))
+* **side-projects/product-management:** add epic card to project summary ([6bee96d](https://github.com/boraoren/boraoren.github.io/commit/6bee96d7748b144e2c7870745b845430e927cce7))
+* **side-projects/product-management:** add themes persona create summary ([8b399be](https://github.com/boraoren/boraoren.github.io/commit/8b399be4a88749c2990436598db1a1085f308c98))
+* **side-projects/product-management:** login header image ([41d7ba0](https://github.com/boraoren/boraoren.github.io/commit/41d7ba0a150992d5a96286730c309bf6b0f71e43))
+* **side-projects/product-management:** theme move ([62a6056](https://github.com/boraoren/boraoren.github.io/commit/62a60563872228abd00303f3c0668d4c129321fc))
+
+
+### Features
+
+* **side-project/product-management:** add login journal ([630e5a3](https://github.com/boraoren/boraoren.github.io/commit/630e5a3feed3d0ae3d9570aabec5a4c69a7dd661))
+* **side-project:** add project management ([897ff77](https://github.com/boraoren/boraoren.github.io/commit/897ff7747b733cf42c776f1b0fef456af095d337))
+* **side-projects/billing-management:** add i need billing management ([b33b2e4](https://github.com/boraoren/boraoren.github.io/commit/b33b2e4caf7214dfcf60c16dd31686629d65fed5))
+* **side-projects/product-manageer:** add epic move ([3113075](https://github.com/boraoren/boraoren.github.io/commit/3113075de9ec4f0666ac0a32c0f43d4e64f70886))
+* **side-projects/product-management:** add collaboration ([8cb29da](https://github.com/boraoren/boraoren.github.io/commit/8cb29da71ec6d3064cfd211619485b19b839be91))
+* **side-projects/product-management:** add epic card to project ([8bc83b6](https://github.com/boraoren/boraoren.github.io/commit/8bc83b6b761ef2d10012cd7192b5e9fb0785ad31))
+* **side-projects/product-management:** add project create feature ([765abcd](https://github.com/boraoren/boraoren.github.io/commit/765abcd99c0a2b04d123140246e7767b00320f4f))
+* **side-projects/product-management:** add signup process ([3fa1271](https://github.com/boraoren/boraoren.github.io/commit/3fa127120c1fb4dc4ff34399e6a9718d2b19a550))
+* **side-projects/product-management:** add team memberst to project ([df24140](https://github.com/boraoren/boraoren.github.io/commit/df24140813a3c4723aae9c1671b4c21c26203a84))
+* **side-projects/product-management:** add theme card to project ([af2dd3d](https://github.com/boraoren/boraoren.github.io/commit/af2dd3d96bf03ee1770d5687c5f17041af9ae446))
+* **side-projects/product-management:** add theme move ([d4d2860](https://github.com/boraoren/boraoren.github.io/commit/d4d28607cbdf7cb4dd45af5b4413477271831a50))
+* **side-projects/product-management:** add user story assignees ([418dbb3](https://github.com/boraoren/boraoren.github.io/commit/418dbb36920ca17a8143339f250e48f156ac8e2f))
+* **side-projects/product-management:** add user story point ([a895b0b](https://github.com/boraoren/boraoren.github.io/commit/a895b0b2e9969fe0b492606433316e89758b6769))
+* **side-projects/product-management:** theme card add persona ([92739e0](https://github.com/boraoren/boraoren.github.io/commit/92739e0b4e4ef7b0088a748356fd72f6900b35fe))
+* **side-projects/product-management:** user story card add ([dd2ed1e](https://github.com/boraoren/boraoren.github.io/commit/dd2ed1e5f884c6bba1d5527572d1f2e91279c58e))
+* **side-projects/product-management:** user story move ([d2a1c33](https://github.com/boraoren/boraoren.github.io/commit/d2a1c33fdfef0c515867aac9d0a00a09119a00f7))
+* **side-projects/project list and create:** updated ([0adea3c](https://github.com/boraoren/boraoren.github.io/commit/0adea3c7d5196fac73258dbb21c34718d650704b))
+* **years:** add ([76bd264](https://github.com/boraoren/boraoren.github.io/commit/76bd264be16e0bcfa7276b7a7a3e7f66d309f1c5))
+
 ## [1.10.2](https://github.com/boraoren/boraoren.github.io/compare/v1.10.1...v1.10.2) (2022-07-07)
 
 
