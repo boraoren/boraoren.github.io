@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 import Head from 'next/head'
-import {Center, Container, Flex, Heading, SimpleGrid, Text} from '@chakra-ui/react'
+import {Box, Center, Container, Flex, Heading, SimpleGrid, Text} from '@chakra-ui/react'
 import JournalTitle from "./atoms/journal/title";
 import {ArrowBackIcon} from "@chakra-ui/icons";
 import {useRouter} from 'next/router'
@@ -9,15 +9,20 @@ import Footer from "./pages/footer";
 interface LayoutJournalProps {
     children?: ReactNode;
     title?: string;
+    subTitle?: string;
 }
 
-const LayoutSideProjects: FC<LayoutJournalProps> = ({children, title}) => {
+const LayoutSideProjects: FC<LayoutJournalProps> = ({
+                                                        children,
+                                                        title,
+                                                        subTitle
+                                                    }) => {
     const router = useRouter();
 
     return (
         <Container maxWidth={1000} height={"100vh"}>
             <Head>
-                <title>{title}</title>
+                <title>{title} / {subTitle}</title>
                 <meta charSet="utf-8"/>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
             </Head>
@@ -36,7 +41,10 @@ const LayoutSideProjects: FC<LayoutJournalProps> = ({children, title}) => {
 
                                onClick={() => router.back()}/>
 
-                <Text textStyle="h1" textTransform="uppercase">{title}</Text>
+                <Box lineHeight={1}>
+                    <Text textStyle="h1" textTransform="uppercase">{title}</Text>
+                    <Text textStyle="h1" textTransform="uppercase">{subTitle}</Text>
+                </Box>
 
             </Flex>
             <Center mt={50}>

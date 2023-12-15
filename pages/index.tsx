@@ -6,7 +6,7 @@ import packageJson from "../package.json";
 import IndexPageDataModel from "../interfaces/IndexPageDataModel";
 import JournalModel from "../interfaces/JournalModel";
 
-import {Box, Button, Center, Flex, Heading, Image, Link, Text, useColorMode,} from "@chakra-ui/react";
+import {Box, Button, Center, Flex, Heading, Image, Link, SimpleGrid, Text, useColorMode,} from "@chakra-ui/react";
 import JournalSummary from "../components/molecules/journal/summary";
 import {getAllJournal} from "../utils/mdx";
 import {dateToDay, monthNumberToMonthName} from "../utils/dateUtil";
@@ -49,14 +49,14 @@ const IndexPage: React.FC<{
         <Layout title={indexPageData.pageTitle["en-US"]}>
 
             <Flex m={2} justifyContent={"space-between"}>
-                <Flex gap={3} mt={1}>
+                <SimpleGrid columns={[1, null, 3]} spacing={1} textAlign="center">
                     <Text
                         fontSize={["sm", "md", "lg", "lg"]}
                         fontWeight="bold"
-                        mt={1}
-                    >
+                        mt={1}>
                         🚀 Side Projects:
                     </Text>
+
                     <Link
                         href="side-projects/product-management"
                         bg="primary.900"
@@ -69,7 +69,19 @@ const IndexPage: React.FC<{
                     >
                         Product Management
                     </Link>
-                </Flex>
+                    <Link
+                        href="side-projects/billing-management"
+                        bg="primary.900"
+                        color="white"
+                        p={1}
+                        borderRadius={5}
+                        fontSize={["sm", "md", "lg", "lg"]}
+                        right={"0px"}
+                        top={"-10px"}
+                    >
+                        Billing Management
+                    </Link>
+                </SimpleGrid>
                 <Box>
                     <Text
                         fontSize={["md", "lg", "xl", "2xl"]}
