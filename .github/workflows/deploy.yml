@@ -23,8 +23,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Use NPM latest
-        run: npm i -g npm@latest
+      - name: Use NPM 9.2.0
+        run: npm i -g npm@9.2.0
 
       - name: Cache dependencies
         uses: actions/cache@v2
