@@ -178,7 +178,7 @@ const IndexPage: React.FC<{
                 return <Box key={key}
                             mt={2}
                             ml={1}
-                            href={`journals/${journal.slug}`}
+                            //href={`journals/${journal.slug}`}
                             style={{fontWeight: "bold", cursor: "pointer"}}
                             onMouseOver={() => setMouseOverJournalState(journal.frontmatter.date)}
                             onMouseOut={() => setMouseOverJournalState("")}

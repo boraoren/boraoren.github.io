@@ -1,5 +1,5 @@
 import {Container, Flex} from "@chakra-ui/react";
-import React from "react";
+import React, {ReactNode} from "react";
 import JournalBoxDate from "../../../atoms/journal/boxdate";
 import JournalText from "../../../atoms/journal/text";
 
@@ -7,6 +7,7 @@ interface SideProjectSummaryProps {
     day: number;
     month: string;
     state?: "default" | "over";
+    children: ReactNode;
 }
 
 const SideProjectSummary: React.FC<SideProjectSummaryProps> = ({

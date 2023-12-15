@@ -1,7 +1,11 @@
 import React from "react";
 import {Text} from "@chakra-ui/react";
 
-const JournalText: React.FC = ({children}) => {
+interface JournalTextProps {
+    children: React.ReactNode;
+}
+
+const JournalText: React.FC<JournalTextProps> = ({children}) => {
 
     return (
         <Text

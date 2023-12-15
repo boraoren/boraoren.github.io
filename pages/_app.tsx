@@ -1,6 +1,5 @@
-import {Button, ChakraProvider, useColorMode} from "@chakra-ui/react";
 // 1. Import the utilities
-import {extendTheme} from "@chakra-ui/react";
+import {ChakraProvider, useColorMode} from "@chakra-ui/react";
 import theme from "../data/themes/theme";
 import type {AppProps} from 'next/app'
 import '@fontsource/roboto/900.css';
@@ -12,9 +11,9 @@ import '@fontsource/open-sans/500-italic.css'
 import Script from "next/script";
 import * as gtag from "../lib/gtag";
 import {useRouter} from "next/router";
-import {useEffect} from "react";
+import {FC, useEffect} from "react";
 
-function MyApp({Component, pageProps}: AppProps) {
+const MyApp:FC<AppProps> = ({Component, pageProps}) =>{
     const {colorMode, toggleColorMode} = useColorMode();
 
     const router = useRouter();
@@ -52,7 +51,8 @@ function MyApp({Component, pageProps}: AppProps) {
 
 
             <ChakraProvider theme={theme}>
-                <Component {...pageProps} />
+                {/*@ts-ignore*/}
+                <Component {...pageProps}/>
             </ChakraProvider>
         </>
     );

@@ -1,5 +1,5 @@
 import {Container, Flex} from "@chakra-ui/react";
-import React from "react";
+import React, {ReactNode} from "react";
 import JournalBoxDate from "../../../atoms/journal/boxdate";
 import JournalText from "../../../atoms/journal/text";
 
@@ -9,6 +9,7 @@ interface JournalSummaryProps {
     state?: "default" | "over";
     zIndex?: number;
     isSticky?: boolean;
+    children: ReactNode;
 }
 
 const JournalSummary: React.FC<JournalSummaryProps> = ({

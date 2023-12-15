@@ -11,7 +11,7 @@ const CartoonTemplate: FC<CartoonTemplateProps> = ({cartoonBoxes, imagePath}) =>
 
 
     return (
-        <SimpleGrid color='white' direction={"column"} gap={5}>
+        <SimpleGrid color='white' gap={5}>
             {cartoonBoxes[0] &&
             <CartoonBox imagePath={imagePath}
                         images={cartoonBoxes[0].images}/>
