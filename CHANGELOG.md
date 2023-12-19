@@ -1,3 +1,18 @@
+# [1.12.0](https://github.com/boraoren/boraoren.github.io/compare/v1.11.0...v1.12.0) (2023-12-19)
+
+
+### Bug Fixes
+
+* **side-projects/billing-management:** add select a company ([86493d3](https://github.com/boraoren/boraoren.github.io/commit/86493d359f64c079a5d50431efa0116ffd31d9b4))
+* **side-projects/billing-management:** change low fidelity file name ([087a45c](https://github.com/boraoren/boraoren.github.io/commit/087a45cc2813733172d9658189180a667ce6073c))
+* **side-projects/product-management:** low fidelity images and alt texts ([28a6093](https://github.com/boraoren/boraoren.github.io/commit/28a6093044de567f20b3ce150c8a7afc6b863534))
+
+
+### Features
+
+* **side-projects/billing-management:** add low fidelity ([f12bc61](https://github.com/boraoren/boraoren.github.io/commit/f12bc61a29933900f8d3973436841eb2a8909251))
+* **side-projects/billing-management:** implement create document feature ([da1d598](https://github.com/boraoren/boraoren.github.io/commit/da1d59876fa5d87d48107b9d3f1b93d80f4df7ad))
+
 # [1.11.0](https://github.com/boraoren/boraoren.github.io/compare/v1.10.2...v1.11.0) (2023-12-15)
 
 
