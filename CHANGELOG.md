@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/boraoren/boraoren.github.io/compare/v1.12.0...v1.13.0) (2023-12-29)
+
+
+### Features
+
+* **side projects/billing management:** add document list ([e875cee](https://github.com/boraoren/boraoren.github.io/commit/e875ceed1c4f574df013e1ff0b8c2b0ead74c5fc))
+
 # [1.12.0](https://github.com/boraoren/boraoren.github.io/compare/v1.11.0...v1.12.0) (2023-12-19)
 
 
