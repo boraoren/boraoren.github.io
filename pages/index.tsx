@@ -49,7 +49,11 @@ const IndexPage: React.FC<{
         <Layout title={indexPageData.pageTitle["en-US"]}>
 
             <Flex m={2} justifyContent={"space-between"}>
-                <SimpleGrid columns={[1, null, 3]} spacing={1} textAlign="center">
+                <SimpleGrid
+                    columns={[1, null, 4]}
+                    spacing={1}
+                    textAlign="center"
+                    zIndex={99999}>
                     <Text
                         fontSize={["sm", "md", "lg", "lg"]}
                         fontWeight="bold"
@@ -80,6 +84,18 @@ const IndexPage: React.FC<{
                         top={"-10px"}
                     >
                         Billing Management
+                    </Link>
+                    <Link
+                        href="side-projects/keep-speech"
+                        bg="primary.900"
+                        color="white"
+                        p={1}
+                        borderRadius={5}
+                        fontSize={["sm", "md", "lg", "lg"]}
+                        right={"0px"}
+                        top={"-10px"}
+                    >
+                        Keep Speech
                     </Link>
                 </SimpleGrid>
                 <Box>
@@ -178,7 +194,7 @@ const IndexPage: React.FC<{
                 return <Box key={key}
                             mt={2}
                             ml={1}
-                            //href={`journals/${journal.slug}`}
+                    //href={`journals/${journal.slug}`}
                             style={{fontWeight: "bold", cursor: "pointer"}}
                             onMouseOver={() => setMouseOverJournalState(journal.frontmatter.date)}
                             onMouseOut={() => setMouseOverJournalState("")}

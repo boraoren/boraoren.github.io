@@ -24,65 +24,67 @@ const SideProject = (props: any) => {
     const subTitle = journals[0].frontmatter.tag.replaceAll("-", " ")
 
     return (
-    <LayoutSideProjects
-        title={title}
-        subTitle={subTitle}>
-        <Flex direction="column" width={1000}>
-            {years.map((year) => {
+        <LayoutSideProjects
+            title={title}
+            subTitle={subTitle}>
+            <Flex direction="column" width={1000}>
+                {years.map((year) => {
 
-                const filteredJournals = journals.filter((journal) => {
-                    const journalDate = new Date(journal.frontmatter.date);
-                    const journalYear = journalDate.getFullYear();
-                    return year === journalYear
-                })
+                    const filteredJournals = journals.filter((journal) => {
+                        const journalDate = new Date(journal.frontmatter.date);
+                        const journalYear = journalDate.getFullYear();
+                        return year === journalYear
+                    })
 
-                return (
-                    <>
-                        <Heading as="h1" size="xl" pl={5} position="sticky" top={0} width="100%"
-                                 bg="white" zIndex={999}>{year}</Heading>
+                    return (
+                        <>
+                            {filteredJournals.length > 0 &&
+                                <Heading as="h1" size="xl" pl={5} position="sticky" top={0} width="100%"
+                                         bg="white" zIndex={999}>{year}</Heading>
+                            }
 
-                        <Accordion allowToggle>
-                            <Flex direction="column" ml={0}>
-                                {filteredJournals.map((journal, key) => {
+                            <Accordion allowToggle>
+                                <Flex direction="column" ml={0}>
+                                    {filteredJournals.map((journal, key) => {
 
-                                    const date = dateToDay(journal.frontmatter.date);
+                                        const date = dateToDay(journal.frontmatter.date);
 
-                                    const Component = getMDXComponent(journal.code);
-                                    const MDXWrapper = (props) => <div className='mdx-prose' {...props} ><Component
-                                        components={{
-                                            // @ts-ignore
-                                            Components
-                                        }}/></div>
+                                        const Component = getMDXComponent(journal.code);
+                                        const MDXWrapper = (props) => <div className='mdx-prose' {...props} ><Component
+                                            components={{
+                                                // @ts-ignore
+                                                Components
+                                            }}/></div>
 
-                                    return (
-                                        <AccordionItem>
-                                            <AccordionButton
-                                                position="sticky" top={8}
-                                                textAlign="left"
-                                                borderRadius={15}>
-                                                <SideProjectSummary day={date.day}
-                                                                    month={monthNumberToMonthName(date.month)}>
-                                                    <b>{journal.frontmatter.title}</b>
-                                                </SideProjectSummary>
-                                                <AccordionIcon/>
-                                            </AccordionButton>
-                                            <AccordionPanel pb={4}>
-                                                <MDXWrapper/>
-                                            </AccordionPanel>
-                                        </AccordionItem>
-                                    )
+                                        return (
+                                            <AccordionItem>
+                                                <AccordionButton
+                                                    position="sticky" top={8}
+                                                    textAlign="left"
+                                                    borderRadius={15}>
+                                                    <SideProjectSummary day={date.day}
+                                                                        month={monthNumberToMonthName(date.month)}>
+                                                        <b>{journal.frontmatter.title}</b>
+                                                    </SideProjectSummary>
+                                                    <AccordionIcon/>
+                                                </AccordionButton>
+                                                <AccordionPanel pb={4}>
+                                                    <MDXWrapper/>
+                                                </AccordionPanel>
+                                            </AccordionItem>
+                                        )
 
-                                })}
-                            </Flex>
-                        </Accordion>
-                    </>
-                )
-            })}
-        </Flex>
+                                    })}
+                                </Flex>
+                            </Accordion>
+                        </>
+                    )
+                })}
+            </Flex>
 
 
-    </LayoutSideProjects>
-)
+        </LayoutSideProjects>
+    )
 }
 
 export const getStaticProps = async ({params}) => {
