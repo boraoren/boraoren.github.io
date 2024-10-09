@@ -62,6 +62,19 @@ const IndexPage: React.FC<{
                     </Text>
 
                     <Link
+                        href="side-projects/keep-speech"
+                        bg="primary.900"
+                        color="white"
+                        p={1}
+                        borderRadius={5}
+                        fontSize={["sm", "md", "lg", "lg"]}
+                        right={"0px"}
+                        top={"-10px"}
+                    >
+                        Keep Speech
+                    </Link>
+
+                    <Link
                         href="side-projects/product-management"
                         bg="primary.900"
                         color="white"
@@ -85,18 +98,7 @@ const IndexPage: React.FC<{
                     >
                         Billing Management
                     </Link>
-                    <Link
-                        href="side-projects/keep-speech"
-                        bg="primary.900"
-                        color="white"
-                        p={1}
-                        borderRadius={5}
-                        fontSize={["sm", "md", "lg", "lg"]}
-                        right={"0px"}
-                        top={"-10px"}
-                    >
-                        Keep Speech
-                    </Link>
+
                 </SimpleGrid>
                 <Box>
                     <Text
