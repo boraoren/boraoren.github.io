@@ -6,9 +6,8 @@
     "dev": "next",
     "dev-local": "source $HOME/.nvm/nvm.sh; nvm use 20.18.2 && next",
     "build": "next build",
-    "build-local": "source $HOME/.nvm/nvm.sh; nvm use 18.17.0 && next build && next export",
+    "build-local": "source $HOME/.nvm/nvm.sh; nvm use 18.17.0 && next build",
     "start": "next start",
-    "export": "next export",
     "type-check": "tsc"
   },
   "dependencies": {
