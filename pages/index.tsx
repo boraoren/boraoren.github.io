@@ -11,6 +11,7 @@ import JournalSummary from "../components/molecules/journal/summary";
 import {getAllJournal} from "../utils/mdx";
 import {dateToDay, monthNumberToMonthName} from "../utils/dateUtil";
 import {useRouter} from 'next/router'
+import EyesTracker from "./EyesTracker";
 
 
 const IndexPage: React.FC<{
@@ -218,6 +219,7 @@ const IndexPage: React.FC<{
                     </JournalSummary>
                 </Box>
             })}
+
         </Layout>
     );
 };

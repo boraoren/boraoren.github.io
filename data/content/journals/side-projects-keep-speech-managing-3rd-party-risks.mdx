@@ -1,0 +1,29 @@
+---
+title: Managing Third Party Risks for Keepspeech project
+summary: |-
+    Today we resolved an integration error caused by a recent change on Zoom’s
+    side which temporarily disrupted the core product feature.
+date: 2025/07/08
+readMore: read more...
+tag: keep-speech
+type: SIDE_PROJECT
+---
+
+Today we resolved an integration error caused by a recent change on Zoom’s
+side which temporarily disrupted the core product feature.
+After identifying the root cause, we adjusted our implementation
+and deployed the fix immediately to production.
+
+This was not the first time we experienced a disruption due to third party changes.
+A similar issue occurred in February 2025, which took nearly five hours to identify and fix.
+These recurring incidents have made it clear that <b>integration risks are a core business
+weakness for KeepSpeech</b>.
+
+Since we rely on third party platforms like Zoom, we often have no visibility into
+their deployment timelines or upcoming changes.
+
+This lack of control introduces a risk to our <b>service reliability and SLA commitments</b>,
+which could impact user trust and product reputation if not resolved quickly.
+We are actively exploring mitigation strategies to improve resilience,
+such as automated monitoring, fallback mechanisms, and direct communication with platform
+providers when possible.
