@@ -15,6 +15,25 @@
 * **editor pro:** add ai feature ([3c4c188](https://github.com/boraoren/boraoren.github.io/commit/3c4c18826771946f83485ca9b2f9e3398c9a9da7))
 * **journals:** add keepspeech journals ([67af17e](https://github.com/boraoren/boraoren.github.io/commit/67af17e06436a32025b7ad0dce1473df08aa8078))
 * **software with movies youtube channel:** add ([1e93364](https://github.com/boraoren/boraoren.github.io/commit/1e93364b81fb0cadd2e3f2c9c75d1df2de5a3726))
+* **ui editor pro:** side proeject button add ([f4f0519](https://github.com/boraoren/boraoren.github.io/commit/f4f0519b2cc27951b54c83eec2da01bd05b94111))
+
+# [1.15.0](https://github.com/boraoren/boraoren.github.io/compare/v1.14.0...v1.15.0) (2025-07-09)
+
+
+### Bug Fixes
+
+* **deploy.yml:** replace ACTIONS_DEPLOY_KEY with GITHUB_TOKEN ([b4aae30](https://github.com/boraoren/boraoren.github.io/commit/b4aae306e391357b0bade5e41d2120164ad9480e))
+* **deploy.yml:** update ([ef25081](https://github.com/boraoren/boraoren.github.io/commit/ef25081142d22cc40a476ba81ce40c0cb04c6307))
+* **deploy.yml:** update node version to 20.18.2 ([cbfbf96](https://github.com/boraoren/boraoren.github.io/commit/cbfbf9658af5d5003cfb73b7c1353509efb609dc))
+* **package.json:** remove export from build and configure next.config.js (https://nextjs.org/docs/app/guides/static-exports) ([b7b9df3](https://github.com/boraoren/boraoren.github.io/commit/b7b9df379d11480931dad8fa896c23d030008785))
+* **package.json:** remove next export ([45186bc](https://github.com/boraoren/boraoren.github.io/commit/45186bc7e229497e3af95691126598525f39c53f))
+
+
+### Features
+
+* **editor pro:** add ai feature ([3c4c188](https://github.com/boraoren/boraoren.github.io/commit/3c4c18826771946f83485ca9b2f9e3398c9a9da7))
+* **journals:** add keepspeech journals ([67af17e](https://github.com/boraoren/boraoren.github.io/commit/67af17e06436a32025b7ad0dce1473df08aa8078))
+* **software with movies youtube channel:** add ([1e93364](https://github.com/boraoren/boraoren.github.io/commit/1e93364b81fb0cadd2e3f2c9c75d1df2de5a3726))
 
 # [1.15.0](https://github.com/boraoren/boraoren.github.io/compare/v1.14.0...v1.15.0) (2025-07-08)
 
