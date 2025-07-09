@@ -61,6 +61,18 @@ const IndexPage: React.FC<{
                         mt={1}>
                         🚀 Side Projects:
                     </Text>
+                    <Link
+                        href="side-projects/ui-editor-pro"
+                        bg="primary.900"
+                        color="white"
+                        p={1}
+                        borderRadius={5}
+                        fontSize={["sm", "md", "lg", "lg"]}
+                        right={"0px"}
+                        top={"-10px"}
+                    >
+                        UI Editor Pro
+                    </Link>
 
                     <Link
                         href="side-projects/keep-speech"
@@ -87,7 +99,7 @@ const IndexPage: React.FC<{
                     >
                         Product Management
                     </Link>
-                    <Link
+                    {/*<Link
                         href="side-projects/billing-management"
                         bg="primary.900"
                         color="white"
@@ -98,7 +110,7 @@ const IndexPage: React.FC<{
                         top={"-10px"}
                     >
                         Billing Management
-                    </Link>
+                    </Link>*/}
 
                 </SimpleGrid>
                 <Box>
