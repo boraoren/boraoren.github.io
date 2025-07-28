@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/boraoren/boraoren.github.io/compare/v1.15.0...v1.15.1) (2025-07-28)
+
+
+### Bug Fixes
+
+* **sideProjects/keepspeech:** change image size ([7104237](https://github.com/boraoren/boraoren.github.io/commit/7104237dda8a1e115ac5715c03deb744176ac896))
+
 # [1.15.0](https://github.com/boraoren/boraoren.github.io/compare/v1.14.0...v1.15.0) (2025-07-28)
 
 
