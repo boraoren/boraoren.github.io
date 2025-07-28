@@ -1,3 +1,10 @@
+## [1.15.2](https://github.com/boraoren/boraoren.github.io/compare/v1.15.1...v1.15.2) (2025-07-28)
+
+
+### Bug Fixes
+
+* **sideProjects/keepspeech:** image path ([b5f8869](https://github.com/boraoren/boraoren.github.io/commit/b5f8869d8975d4b6105617105e259987a7160520))
+
 ## [1.15.1](https://github.com/boraoren/boraoren.github.io/compare/v1.15.0...v1.15.1) (2025-07-28)
 
 
